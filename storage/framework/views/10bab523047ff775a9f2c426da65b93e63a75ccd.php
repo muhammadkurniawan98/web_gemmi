@@ -1,0 +1,1 @@
+<?php /**PATH D:\project_website\laravel_8\web_gemmi\resources\views/buku_tamu/index.blade.php ENDPATH**/ ?>

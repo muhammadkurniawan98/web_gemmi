@@ -1,0 +1,1 @@
+<?php /**PATH D:\project_website\laravel_8\web_gemmi\resources\views/pages_user/donatur/index.blade.php ENDPATH**/ ?>

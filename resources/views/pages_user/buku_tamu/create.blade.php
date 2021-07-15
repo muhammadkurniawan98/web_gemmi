@@ -10,7 +10,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h2>{{ __('ISI BUKU TAMU') }}</h2>
                     <ol>
-                        <li><a href="/">Kembali</a></li>
+                        <li><a href="/">Kembali ke beranda</a></li>
                     </ol>
                 </div>
             </div>

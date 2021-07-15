@@ -10,7 +10,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h2>{{ __('BERI DONASI') }}</h2>
                     <ol>
-                        <li><a href="/">Kembali</a></li>
+                        <li><a href="/">Kembali ke beranda</a></li>
                     </ol>
                 </div>
 
@@ -24,6 +24,7 @@
                         <div class="card">
 
                             <div class="card-body">
+                                @if($status_tamu or $status_donatur)
                                 <form method="POST" action="{{ route('donasi.store') }}" enctype="multipart/form-data">
                                     @csrf
 
@@ -151,6 +152,11 @@
                                         </div>
                                     </div>
                                 </form>
+                                @else
+                                    <form>
+                                        <label>ANDA HARUS MENGISI TERLEBIH DAHULU BUKU TAMU LALU MELAKUKAN PENDAFTARAN DONATUR DENGAN KLIK <a href="{{ route('tamu.create') }}">DISINI</a>.</label>
+                                    </form>
+                                @endif
                             </div>
                         </div>
                     </div>
