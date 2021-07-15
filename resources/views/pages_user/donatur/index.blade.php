@@ -8,7 +8,7 @@
             <div class="container">
 
                 <div class="d-flex justify-content-between">
-                    <h3>PENDAFTAR DONATUR</h3>
+                    <h3>DAFTAR DONATUR</h3>
                     <ol>
                         <li><a href="/">Kembali</a></li>
                     </ol>

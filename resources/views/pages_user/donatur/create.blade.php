@@ -28,6 +28,7 @@
                             </div>
                             <br>
                             <div class="card-body border-0">
+                                @if(!$status)
                                 <form method="POST" action="{{ route('donatur.store') }}">
                                     @csrf
                                     <div class="form-group row">
@@ -135,11 +136,16 @@
                                     <div class="form-group row mb-0">
                                         <div class="col-md-8 offset-md-4">
                                             <button type="submit" class="btn btn-primary">
-                                                {{ __('Kirim') }}
+                                                {{ __('Lanjut') }}
                                             </button>
                                         </div>
                                     </div>
                                 </form>
+                                @else
+                                <form>
+                                    <label>ANDA SUDAH MENDAFTAR SEBAGAI DONATUR. KLIK <a href="{{ route('donasi.create') }}">LANJUT</a> UNTUK MELAKUKAN DONASI.</label>
+                                </form>
+                                @endif
                             </div>
                         </div>
                     </div>

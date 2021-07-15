@@ -21,7 +21,13 @@ class DonaturController extends Controller
 
     public function create()
     {
-        return view('pages_user.donatur.create');
+        $id = auth()->user()->id;
+
+        $donatur = Donatur::where('user_id', $id)->paginate(1);
+
+        $data = ['status' => count($donatur) === 1];
+
+        return view('pages_user.donatur.create', $data);
     }
 
     public function store(DonaturRequest $request)
