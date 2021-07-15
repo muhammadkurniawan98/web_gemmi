@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class DonaturRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'nama'          => 'required|string|max:255',
+            'status'        => 'required|string|max:255',
+            'tempat_lahir'  => 'required|string|max:255',
+            'tanggal_lahir' => 'required|date_format:Y-m-d',
+            'no_telepon'    => 'required|regex:/^[0-9]+$/',
+            'pekerjaan'     => 'required|string|max:255',
+            'tanggal'       => 'required|date_format:Y-m-d'
+        ];
+    }
+}

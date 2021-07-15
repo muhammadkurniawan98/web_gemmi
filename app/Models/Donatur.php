@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Donatur extends Model
+{
+    use HasFactory;
+
+    protected $table = 'donatur';
+
+    protected $fillable = [
+        'user_id',
+        'nama',
+        'status',
+        'ttl',
+        'no_telepon',
+        'pekerjaan',
+        'tanggal'
+    ];
+
+    public $timestamps = false;
+}
