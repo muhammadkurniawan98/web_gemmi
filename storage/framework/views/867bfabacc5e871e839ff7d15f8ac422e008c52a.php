@@ -8,7 +8,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h2><?php echo e(__('ISI BUKU TAMU')); ?></h2>
                     <ol>
-                        <li><a href="/">Kembali</a></li>
+                        <li><a href="/">Kembali ke beranda</a></li>
                     </ol>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="card-body border-0">
                                 <?php if(!$status): ?>
-                                <form method="POST" action="<?php echo e(route('tamu.store')); ?>">
+                                <form role="form" method="POST" id="form_tamu" action="<?php echo e(route('tamu.store')); ?>">
                                     <?php echo csrf_field(); ?>
                                     <div class="form-group row">
                                         <label for="nama" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Nama')); ?></label>
@@ -118,13 +118,35 @@ unset($__errorArgs, $__bag); ?>
 
                                     <div class="form-group row mb-0">
                                         <div class="col-md-8 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
-                                                <?php echo e(__('Lanjut')); ?>
-
-                                            </button>
+                                            <input type="button" name="btn" value="Submit" data-toggle="modal" data-target="#confirm-submit-tamu" class="btn btn-primary" />
                                         </div>
                                     </div>
+                                    <div class="modal fade" id="confirm-submit-tamu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    Pesan
+                                                </div>
+                                                <div class="modal-body">
+                                                    Selamat Datang di website GEMMI
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <a id="submit" class="btn btn-success success">Lanjut</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </form>
+                                <script>
+                                    $('#submit').click(function(){
+                                        /* when the submit button in the modal is clicked, submit the form */
+                                        alert('submitting');
+                                        $('#form_tamu').submit();
+                                    });
+                                </script>
                                 <?php else: ?>
                                     <form>
                                         <label>ANDA SUDAH MENGISI BUKU TAMU HARI INI. KLIK <a href="<?php echo e(route('donatur.create')); ?>">LANJUT</a> UNTUK PENDAFTARAN DONATUR.</label>

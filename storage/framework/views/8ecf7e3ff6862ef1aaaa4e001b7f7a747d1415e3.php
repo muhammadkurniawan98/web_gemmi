@@ -8,7 +8,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h2><?php echo e(__('Login')); ?></h2>
                     <ol>
-                        <li><a href="/">Kembali</a></li>
+                        <li><a href="/">Kembali ke beranda</a></li>
                     </ol>
                 </div>
 

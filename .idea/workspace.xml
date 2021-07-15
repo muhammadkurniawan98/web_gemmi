@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be143e53-fe73-412b-b5b5-7e0300e136b8" name="Default Changelist" comment="version-1" />
+    <list default="true" id="be143e53-fe73-412b-b5b5-7e0300e136b8" name="Default Changelist" comment="version-1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BukutamuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BukutamuController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DonasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DonasiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DonaturController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DonaturController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/include/modal-donasi.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/include/modal-donatur.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/include/modal-tamu.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/template-app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/template-app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/W2hUvlFgX2mZnGxzlyB5AR4iGFlDsdvx2zuxL5fr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/867bfabacc5e871e839ff7d15f8ac422e008c52a.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/867bfabacc5e871e839ff7d15f8ac422e008c52a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/8ecf7e3ff6862ef1aaaa4e001b7f7a747d1415e3.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8ecf7e3ff6862ef1aaaa4e001b7f7a747d1415e3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/e5cf571b304a247b415fec10ffe2eb59f9233fe4.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/e5cf571b304a247b415fec10ffe2eb59f9233fe4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/f66734620a0b1194ed50e634fb4e36bddac5a796.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f66734620a0b1194ed50e634fb4e36bddac5a796.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,7 +160,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1rYZLpoBgUcqNXDCfPUSx6NaTzp" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -216,7 +234,7 @@
       <workItem from="1624791334077" duration="178000" />
       <workItem from="1626382986540" duration="2118000" />
       <workItem from="1626385577118" duration="371000" />
-      <workItem from="1626387882772" duration="2455000" />
+      <workItem from="1626387882772" duration="4933000" />
     </task>
     <servers />
   </component>

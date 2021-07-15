@@ -28,5 +28,16 @@ Route::resource('donatur', DonaturController::class);
 Route::resource('tamu', BukutamuController::class);
 Route::resource('user', UserController::class);
 
+Route::group(['middleware' => 'auth'], function (){
+    Route::get('/tamu-input-success', function (){
+        return view('pages_user.buku_tamu.create-success');
+    })->name('tamu.success');
+    Route::get('/pendaftar-donatur-success', function (){
+        return view('pages_user.donatur.create-success');
+    })->name('donatur.success');
+    Route::get('/pemberian-donasi-success', function (){
+        return view('pages_user.donasi.create-success');
+    })->name('donasi.success');
+});
 
 

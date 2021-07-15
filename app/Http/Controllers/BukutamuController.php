@@ -49,6 +49,6 @@ class BukutamuController extends Controller
             ]);
         }
 
-        return redirect()->route('donasi.create');
+        return redirect()->route('tamu.success');
     }
 }

@@ -69,6 +69,6 @@ class DonasiController extends Controller
             ]);
         }
 
-        return redirect()->route('donasi.index');
+        return redirect()->route('donasi.success');
     }
 }

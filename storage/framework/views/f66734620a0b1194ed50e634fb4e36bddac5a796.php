@@ -8,7 +8,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h2><?php echo e(__('PENDAFTARAN DONATUR')); ?></h2>
                     <ol>
-                        <li><a href="/">Kembali</a></li>
+                        <li><a href="/">Kembali ke beranda</a></li>
                     </ol>
                 </div>
 
@@ -232,7 +232,7 @@ unset($__errorArgs, $__bag); ?>
                                     <div class="form-group row mb-0">
                                         <div class="col-md-8 offset-md-4">
                                             <button type="submit" class="btn btn-primary">
-                                                <?php echo e(__('Kirim')); ?>
+                                                <?php echo e(__('Lanjut')); ?>
 
                                             </button>
                                         </div>

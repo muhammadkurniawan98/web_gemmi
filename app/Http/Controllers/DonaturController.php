@@ -44,6 +44,6 @@ class DonaturController extends Controller
             ]);
         }
 
-        return redirect()->route('tamu.create');
+        return redirect()->route('donatur.success');
     }
 }
