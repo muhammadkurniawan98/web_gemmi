@@ -79,10 +79,6 @@
 <script src="<?php echo e(asset('assets/vendor/owl.carousel/owl.carousel.min.js')); ?>"></script>
 <!-- Template Main JS File -->
 <script src="<?php echo e(asset('assets/js/main.js')); ?>"></script>
-
-
-
-
 </body>
 </html>
 <?php /**PATH D:\project_website\github\backup\web_gemmi\resources\views/layouts/template-app.blade.php ENDPATH**/ ?>

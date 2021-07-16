@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <main id="main">
 
@@ -27,14 +25,14 @@
                             </div>
                             <div class="card-body border-0">
                                 <div class="row d-flex justify-content-center">
-                                    <label>PENDAFTARAN ANDA SEBAGAI DONATUR BERHASIL. SELANJUTNYA ANDA BISA MELAKUKAN DONASI.</label>
+                                    <label>TERIMAKASIH SUDAH BERKUNJUNG DI WEBSITE KAMI</label>
                                 </div>
                             </div>
                             <div class="card-footer border-0">
                                 <div class="row d-flex justify-content-around">
-                                    <a class="btn avatar-dropdown-btn" href="{{route('tamu.create')}}">ISI BUKU TAMU</a>
-                                    <a class="btn avatar-dropdown-btn" href="{{route('donatur.create')}}">PENDAFTARAN DONATUR</a>
-                                    <a class="btn avatar-dropdown-btn" href="{{route('donasi.create')}}">PEMBERIAN DONASI</a>
+                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('tamu.create')); ?>">ISI BUKU TAMU</a>
+                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donatur.create')); ?>">PENDAFTARAN DONATUR</a>
+                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donasi.create')); ?>">PEMBERIAN DONASI</a>
                                 </div>
                             </div>
                         </div>
@@ -44,4 +42,6 @@
         </section>
 
     </main>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\project_website\github\backup\web_gemmi\resources\views/pages_user/buku_tamu/create-success.blade.php ENDPATH**/ ?>

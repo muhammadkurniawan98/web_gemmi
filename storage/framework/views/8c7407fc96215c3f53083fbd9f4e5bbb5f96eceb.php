@@ -20,9 +20,8 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card">
-
-                            <div class="card-body">
-                                <?php if($status_tamu or $status_donatur): ?>
+                            <div class="card-body border-0">
+                                <?php if($status_tamu && $status_donatur): ?>
                                 <form method="POST" action="<?php echo e(route('donasi.store')); ?>" enctype="multipart/form-data">
                                     <?php echo csrf_field(); ?>
 
@@ -237,10 +236,15 @@ unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </form>
                                 <?php else: ?>
-                                    <form>
-                                        <label>ANDA HARUS MENGISI TERLEBIH DAHULU BUKU TAMU LALU MELAKUKAN PENDAFTARAN DONATUR DENGAN KLIK <a href="<?php echo e(route('tamu.create')); ?>">DISINI</a>.</label>
-                                    </form>
+                                    <label>ANDA HARUS MENGISI TERLEBIH DAHULU BUKU TAMU LALU MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU PEMBERIAN DONASI.</label>
                                 <?php endif; ?>
+                            </div>
+                            <div class="card-footer border-0">
+                                <div class="row d-flex justify-content-around">
+                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('tamu.create')); ?>">ISI BUKU TAMU</a>
+                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donatur.create')); ?>">PENDAFTARAN DONATUR</a>
+                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donasi.create')); ?>">PEMBERIAN DONASI</a>
+                                </div>
                             </div>
                         </div>
                     </div>
