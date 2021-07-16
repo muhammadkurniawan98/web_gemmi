@@ -27,7 +27,7 @@
                             <br>
                             <div class="card-body border-0">
                                 <?php if(!$status): ?>
-                                <form method="POST" action="<?php echo e(route('donatur.store')); ?>">
+                                <form role="form" method="POST" id="form_donatur" action="<?php echo e(route('donatur.store')); ?>">
                                     <?php echo csrf_field(); ?>
                                     <div class="form-group row">
                                         <label for="nama" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Nama')); ?></label>
@@ -231,18 +231,43 @@ unset($__errorArgs, $__bag); ?>
 
                                     <div class="form-group row mb-0">
                                         <div class="col-md-8 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
-                                                <?php echo e(__('Lanjut')); ?>
+                                            <input type="button" name="btn" value="Submit" data-toggle="modal" data-target="#confirm-submit-donatur" class="btn btn-primary" />
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="confirm-submit-donatur" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    Pesan
+                                                </div>
+                                                <div class="modal-body">
+                                                    PASTIKAN SEMUA INFORMASI YANG ANDA BERIKAN BENAR.
+                                                </div>
 
-                                            </button>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <a id="submit" class="btn btn-success success">Lanjut</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </form>
+                                <script>
+                                    $('#submit').click(function(){
+                                        /* when the submit button in the modal is clicked, submit the form */
+                                        $('#form_donatur').submit();
+                                    });
+                                </script>
                                 <?php else: ?>
-                                <form>
-                                    <label>ANDA SUDAH MENDAFTAR SEBAGAI DONATUR. KLIK <a href="<?php echo e(route('donasi.create')); ?>">LANJUT</a> UNTUK MELAKUKAN DONASI.</label>
-                                </form>
+                                    <label>ANDA SUDAH MENDAFTAR SEBAGAI DONATUR.</label>
                                 <?php endif; ?>
+                            </div>
+                            <div class="card-footer border-0">
+                                <div class="row d-flex justify-content-around">
+                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('tamu.create')); ?>">ISI BUKU TAMU</a>
+                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donatur.create')); ?>">PENDAFTARAN DONATUR</a>
+                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donasi.create')); ?>">PEMBERIAN DONASI</a>
+                                </div>
                             </div>
                         </div>
                     </div>

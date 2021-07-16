@@ -103,15 +103,19 @@
                                 <script>
                                     $('#submit').click(function(){
                                         /* when the submit button in the modal is clicked, submit the form */
-                                        alert('submitting');
                                         $('#form_tamu').submit();
                                     });
                                 </script>
                                 @else
-                                    <form>
-                                        <label>ANDA SUDAH MENGISI BUKU TAMU HARI INI. KLIK <a href="{{ route('donatur.create') }}">LANJUT</a> UNTUK PENDAFTARAN DONATUR.</label>
-                                    </form>
+                                    <label>ANDA SUDAH MENGISI BUKU TAMU HARI INI.</label>
                                 @endif
+                            </div>
+                            <div class="card-footer border-0">
+                                <div class="row d-flex justify-content-around">
+                                    <a class="btn avatar-dropdown-btn" href="{{route('tamu.create')}}">ISI BUKU TAMU</a>
+                                    <a class="btn avatar-dropdown-btn" href="{{route('donatur.create')}}">PENDAFTARAN DONATUR</a>
+                                    <a class="btn avatar-dropdown-btn" href="{{route('donasi.create')}}">PEMBERIAN DONASI</a>
+                                </div>
                             </div>
                         </div>
                     </div>

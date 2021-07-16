@@ -22,7 +22,7 @@
                         <div class="card">
                             <div class="card-body border-0">
                                 <?php if($status_tamu && $status_donatur): ?>
-                                <form method="POST" action="<?php echo e(route('donasi.store')); ?>" enctype="multipart/form-data">
+                                <form role="form" method="POST" id="form_donasi" action="<?php echo e(route('donasi.store')); ?>" enctype="multipart/form-data">
                                     <?php echo csrf_field(); ?>
 
                                     <div class="form-group row">
@@ -228,13 +228,33 @@ unset($__errorArgs, $__bag); ?>
 
                                     <div class="form-group row mb-0">
                                         <div class="col-md-8 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
-                                                <?php echo e(__('Kirim')); ?>
+                                            <input type="button" name="btn" value="Submit" data-toggle="modal" data-target="#confirm-submit-donasi" class="btn btn-primary" />
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="confirm-submit-donasi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    Pesan
+                                                </div>
+                                                <div class="modal-body">
+                                                    TERIMAKASIH TELAH MELAKUKAN DONASI.
+                                                </div>
 
-                                            </button>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <a id="submit" class="btn btn-success success">Lanjut</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </form>
+                                <script>
+                                    $('#submit').click(function(){
+                                        /* when the submit button in the modal is clicked, submit the form */
+                                        $('#form_donasi').submit();
+                                    });
+                                </script>
                                 <?php else: ?>
                                     <label>ANDA HARUS MENGISI TERLEBIH DAHULU BUKU TAMU LALU MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU PEMBERIAN DONASI.</label>
                                 <?php endif; ?>
