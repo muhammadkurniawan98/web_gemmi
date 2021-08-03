@@ -6,6 +6,7 @@ use App\Http\Requests\DonasiRequest;
 use App\Models\BukuTamu;
 use App\Models\Donasi;
 use App\Models\Donatur;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 
@@ -70,5 +71,22 @@ class DonasiController extends Controller
         }
 
         return redirect()->route('donasi.success');
+    }
+    public function search(Request $request){
+        $keyword = $request->keyword;
+        if(trim($keyword) == ''){
+            return redirect(route('donasi.index'));
+        }
+        else{
+            $donasi = Donasi::where('nama_donatur', 'like', '%'.$keyword.'%')
+                            ->orWhere('nama_penerima', 'like', '%'.$keyword.'%')
+                            ->orWhere('alamat', 'like', '%'.$keyword.'%')
+                            ->orWhere('no_telepon', 'like', '%'.$keyword.'%')
+                            ->orWhere('jenis_donasi', 'like', '%'.$keyword.'%')
+                            ->orWhere('bukti_donasi', 'like', '%'.$keyword.'%')
+                            ->orWhere('tanggal', 'like', '%'.$keyword.'%')
+                            ->paginate(10);
+            return view('pages_user.donasi.index')->with('donasi', $donasi);
+        }
     }
 }

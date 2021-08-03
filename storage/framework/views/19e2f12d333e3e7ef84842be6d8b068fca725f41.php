@@ -18,6 +18,7 @@
         <section id="service" class="services">
 
             <div class="container">
+
                 <div class="row justify-content-center">
                     <div class="col-md-12">
 
@@ -35,6 +36,17 @@
                                 </div>
                             </div>
                             <div class="card-body border-0">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <form action="<?php echo e(route('tamu.cari')); ?>" method="POST">
+                                            <?php echo csrf_field(); ?>
+                                            <div class="input-group">
+                                                <input  class="form-control" type="text" name="keyword" placeholder="cari tamu">
+                                                <input class="btn btn-primary" type="submit" value="cari">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
                                         <table class="table table-hover">

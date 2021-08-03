@@ -37,6 +37,17 @@
                                 </div>
                             </div>
                             <div class="card-body border-0">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <form action="{{route('donasi.cari')}}" method="POST">
+                                            @csrf
+                                            <div class="input-group">
+                                                <input  class="form-control" type="text" name="keyword" placeholder="cari donasi">
+                                                <input class="btn btn-primary" type="submit" value="cari">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
                                         <table class="table table-hover">

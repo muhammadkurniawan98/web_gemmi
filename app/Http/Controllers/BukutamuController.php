@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BukuTamuRequest;
 use App\Models\BukuTamu;
+use Illuminate\Http\Request;
 
 class BukutamuController extends Controller
 {
@@ -50,5 +51,18 @@ class BukutamuController extends Controller
         }
 
         return redirect()->route('tamu.success');
+    }
+    public function search(Request $request){
+        $keyword = $request->keyword;
+        if(trim($keyword) == ''){
+            return redirect(route('tamu.index'));
+        }
+        else{
+            $bukuTamu = BukuTamu::where('nama', $keyword)
+                ->orWhere('alamat', 'like', '%'.$keyword.'%')
+                ->orWhere('tanggal', 'like', '%'.$keyword.'%')
+                ->paginate(10);
+            return view('pages_user.buku_tamu.index')->with('buku_tamu', $bukuTamu);
+        }
     }
 }

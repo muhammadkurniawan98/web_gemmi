@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DonaturRequest;
 use App\Models\Donatur;
+use Illuminate\Http\Request;
 
 class DonaturController extends Controller
 {
@@ -45,5 +46,21 @@ class DonaturController extends Controller
         }
 
         return redirect()->route('donatur.success');
+    }
+    public function search(Request $request){
+        $keyword = $request->keyword;
+        if(trim($keyword) == ''){
+            return redirect(route('donatur.index'));
+        }
+        else{
+            $donatur = Donatur::where('nama', 'like', '%'.$keyword.'%')
+                ->orWhere('status','like', '%'.$keyword.'%')
+                ->orWhere('ttl', 'like', '%'.$keyword.'%')
+                ->orWhere('no_telepon', 'like', '%'.$keyword.'%')
+                ->orWhere('pekerjaan', 'like', '%'.$keyword.'%')
+                ->orWhere('tanggal', 'like', '%'.$keyword.'%')
+                ->paginate(10);
+            return view('pages_user.donatur.index')->with('donatur', $donatur);
+        }
     }
 }

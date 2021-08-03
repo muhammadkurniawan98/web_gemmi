@@ -38,6 +38,10 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/pemberian-donasi-success', function (){
         return view('pages_user.donasi.create-success');
     })->name('donasi.success');
+
+    Route::post('/tamu/cari', [BukutamuController::class, 'search'])->name('tamu.cari');
+    Route::post('/donatur/cari', [DonaturController::class, 'search'])->name('donatur.cari');
+    Route::post('/donasi/cari', [DonasiController::class, 'search'])->name('donasi.cari');
 });
 
 

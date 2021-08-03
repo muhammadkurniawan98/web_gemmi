@@ -3,11 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="be143e53-fe73-412b-b5b5-7e0300e136b8" name="Default Changelist" comment="version-1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donatur/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donatur/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/CiDirnzVA3Zm8jUeySgCrT5PirZQ0BtXTOFOO1PQ" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/CiDirnzVA3Zm8jUeySgCrT5PirZQ0BtXTOFOO1PQ" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/867bfabacc5e871e839ff7d15f8ac422e008c52a.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/867bfabacc5e871e839ff7d15f8ac422e008c52a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BukutamuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BukutamuController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DonasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DonasiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DonaturController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DonaturController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donatur/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donatur/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/8AQitA3M2BNBqrv3OFubnz3aY4WX2miPH8rCni7J" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/CiDirnzVA3Zm8jUeySgCrT5PirZQ0BtXTOFOO1PQ" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/0b1f65e986574fd02f216e60346c5ad46b970b57.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0b1f65e986574fd02f216e60346c5ad46b970b57.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/19e2f12d333e3e7ef84842be6d8b068fca725f41.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/19e2f12d333e3e7ef84842be6d8b068fca725f41.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/bd5b2ff98b91d8b988406d34903c4646b099099a.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/bd5b2ff98b91d8b988406d34903c4646b099099a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/d1f3e28fa48a8ceb7af43709062a4760efd5ec60.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/d1f3e28fa48a8ceb7af43709062a4760efd5ec60.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,18 +171,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project_website\github\backup\web_gemmi\resources\views" />
       <recent name="D:\project_website\laravel_8\web_gemmi\template_argon" />
       <recent name="D:\project_website\laravel_8\web_gemmi\public\assets\js" />
       <recent name="D:\project_website\laravel_8\web_gemmi\public\assets\css" />
       <recent name="D:\project_website\laravel_8\web_gemmi\public\assets" />
-      <recent name="D:\project_website\laravel_8\web_gemmi\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project_website\laravel_8\web_gemmi\public\assets\css" />
@@ -225,7 +234,11 @@
       <workItem from="1624791334077" duration="178000" />
       <workItem from="1626382986540" duration="2118000" />
       <workItem from="1626385577118" duration="371000" />
-      <workItem from="1626387882772" duration="7087000" />
+      <workItem from="1626387882772" duration="7442000" />
+      <workItem from="1626460165075" duration="99000" />
+      <workItem from="1626976294286" duration="1071000" />
+      <workItem from="1627957598853" duration="670000" />
+      <workItem from="1627963392948" duration="3504000" />
     </task>
     <servers />
   </component>
