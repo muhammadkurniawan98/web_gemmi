@@ -40,6 +40,7 @@ class AllTables extends Migration
             $table->string('jenis_donasi');
             $table->string('bukti_donasi');
             $table->date('tanggal');
+            $table->string('status');
         });
     }
 

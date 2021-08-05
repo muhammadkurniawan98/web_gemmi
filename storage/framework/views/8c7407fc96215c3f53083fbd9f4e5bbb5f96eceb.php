@@ -256,13 +256,13 @@ unset($__errorArgs, $__bag); ?>
                                     });
                                 </script>
                                 <?php else: ?>
-                                    <label>ANDA HARUS MENGISI TERLEBIH DAHULU BUKU TAMU LALU MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU PEMBERIAN DONASI.</label>
+                                    <label>ANDA HARUS MENGISI TERLEBIH DAHULU MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU BUKU TAMU LALU PEMBERIAN DONASI.</label>
                                 <?php endif; ?>
                             </div>
                             <div class="card-footer border-0">
                                 <div class="row d-flex justify-content-around">
-                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('tamu.create')); ?>">ISI BUKU TAMU</a>
                                     <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donatur.create')); ?>">PENDAFTARAN DONATUR</a>
+                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('tamu.create')); ?>">ISI BUKU TAMU</a>
                                     <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donasi.create')); ?>">PEMBERIAN DONASI</a>
                                 </div>
                             </div>
