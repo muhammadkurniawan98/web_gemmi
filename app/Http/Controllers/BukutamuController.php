@@ -17,7 +17,7 @@ class BukutamuController extends Controller
     {
         date_default_timezone_set('Asia/Jakarta');
 
-        $bukuTamu = BukuTamu::where('tanggal', date('Y-m-d'))->paginate(10);
+        $bukuTamu = BukuTamu::orderBy('tanggal', 'desc')->paginate(10);
 
         return view('pages_user.buku_tamu.index')->with('buku_tamu', $bukuTamu);
     }
@@ -58,7 +58,7 @@ class BukutamuController extends Controller
             return redirect(route('tamu.index'));
         }
         else{
-            $bukuTamu = BukuTamu::where('nama', $keyword)
+            $bukuTamu = BukuTamu::where('nama', 'like','%'.$keyword.'%')
                 ->orWhere('alamat', 'like', '%'.$keyword.'%')
                 ->orWhere('tanggal', 'like', '%'.$keyword.'%')
                 ->paginate(10);
