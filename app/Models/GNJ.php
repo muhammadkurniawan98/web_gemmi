@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class GNJ extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'jenis_gnj',
+        'tambahan_donasi',
+        'donasi_id'
+    ];
+    public function Donasi(){
+        return $this->belongsTo(Donasi::class);
+    }
 }

@@ -23,4 +23,20 @@ class Donasi extends Model
         'bukti_donasi',
         'tanggal',
     ];
+
+    public function Dana(){
+        return $this->hasOne(Dana::class);
+    }
+    public function Buku(){
+        return $this->hasOne(Buku::class);
+    }
+    public function Sembako(){
+        return $this->hasOne(Sembako::class);
+    }
+    public function Snack(){
+        return $this->hasOne(Snack::class);
+    }
+    public function GNJ(){
+        return $this->hasOne(GNJ::class);
+    }
 }
