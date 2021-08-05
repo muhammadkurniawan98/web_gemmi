@@ -14,34 +14,34 @@ class SemuaJenisDonasi extends Migration
     public function up()
     {
         //
-        Schema::create('', function (Blueprint $table){
+        Schema::create('gnj', function (Blueprint $table){
             $table->id();
-            $table->string('jenis_dana');
-            $table->string('tambahan_donasi');
+            $table->string('jenis_gnj');
+            $table->string('tambahan_donasi')->nullable();
             $table->foreignId('donasi_id')->constrained('donasi');
         });
-        Schema::create('', function (Blueprint $table){
+        Schema::create('snack', function (Blueprint $table){
             $table->id();
-            $table->string('jenis_dana');
-            $table->string('tambahan_donasi');
+            $table->string('jenis_snack');
+            $table->string('tambahan_donasi')->nullable();
             $table->foreignId('donasi_id')->constrained('donasi');
         });
-        Schema::create('', function (Blueprint $table){
+        Schema::create('sembako', function (Blueprint $table){
             $table->id();
-            $table->string('jenis_dana');
-            $table->string('tambahan_donasi');
+            $table->string('jenis_sembako');
+            $table->string('tambahan_donasi')->nullable();
             $table->foreignId('donasi_id')->constrained('donasi');
         });
-        Schema::create('', function (Blueprint $table){
+        Schema::create('buku', function (Blueprint $table){
             $table->id();
-            $table->string('jenis_dana');
-            $table->string('tambahan_donasi');
+            $table->string('jenis_buku');
+            $table->string('tambahan_donasi')->nullable();
             $table->foreignId('donasi_id')->constrained('donasi');
         });
         Schema::create('dana', function (Blueprint $table){
             $table->id();
             $table->string('jenis_dana');
-            $table->string('tambahan_donasi');
+            $table->string('tambahan_donasi')->nullable();
             $table->foreignId('donasi_id')->constrained('donasi');
         });
     }
@@ -54,5 +54,10 @@ class SemuaJenisDonasi extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('gnj');
+        Schema::dropIfExists('snack');
+        Schema::dropIfExists('sembako');
+        Schema::dropIfExists('buku');
+        Schema::dropIfExists('dana');
     }
 }
