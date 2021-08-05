@@ -173,13 +173,13 @@
                                     });
                                 </script>
                                 @else
-                                    <label>ANDA HARUS MENGISI TERLEBIH DAHULU BUKU TAMU LALU MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU PEMBERIAN DONASI.</label>
+                                    <label>ANDA HARUS MENGISI TERLEBIH DAHULU MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU BUKU TAMU LALU PEMBERIAN DONASI.</label>
                                 @endif
                             </div>
                             <div class="card-footer border-0">
                                 <div class="row d-flex justify-content-around">
-                                    <a class="btn avatar-dropdown-btn" href="{{route('tamu.create')}}">ISI BUKU TAMU</a>
                                     <a class="btn avatar-dropdown-btn" href="{{route('donatur.create')}}">PENDAFTARAN DONATUR</a>
+                                    <a class="btn avatar-dropdown-btn" href="{{route('tamu.create')}}">ISI BUKU TAMU</a>
                                     <a class="btn avatar-dropdown-btn" href="{{route('donasi.create')}}">PEMBERIAN DONASI</a>
                                 </div>
                             </div>
