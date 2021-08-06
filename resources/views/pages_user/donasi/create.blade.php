@@ -173,7 +173,7 @@
                                     });
                                 </script>
                                 @else
-                                    <label>ANDA HARUS MENGISI TERLEBIH DAHULU MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU BUKU TAMU LALU PEMBERIAN DONASI.</label>
+                                    <label>ANDA HARUS MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU BUKU TAMU LALU PEMBERIAN DONASI.</label>
                                 @endif
                             </div>
                             <div class="card-footer border-0">

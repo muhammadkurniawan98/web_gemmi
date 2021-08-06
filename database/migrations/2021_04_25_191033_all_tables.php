@@ -38,6 +38,7 @@ class AllTables extends Migration
             $table->string('alamat');
             $table->string('no_telepon');
             $table->string('jenis_donasi');
+            $table->string('jumlah_donasi');
             $table->string('bukti_donasi');
             $table->date('tanggal');
             $table->string('status');

@@ -20,8 +20,10 @@ class Donasi extends Model
         'alamat',
         'no_telepon',
         'jenis_donasi',
+        'jumlah_donasi',
         'bukti_donasi',
         'tanggal',
+        'status'
     ];
 
     public function Dana(){

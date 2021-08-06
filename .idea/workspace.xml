@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be143e53-fe73-412b-b5b5-7e0300e136b8" name="Default Changelist" comment="version-1" />
+    <list default="true" id="be143e53-fe73-412b-b5b5-7e0300e136b8" name="Default Changelist" comment="version-1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Donasi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Donasi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_25_191033_all_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_25_191033_all_tables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/DwETYjgjpP3lxLQCYk3rfReIsv9fJf40zx0xgqPp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/d1f3e28fa48a8ceb7af43709062a4760efd5ec60.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/d1f3e28fa48a8ceb7af43709062a4760efd5ec60.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,6 +184,7 @@
       <recent name="D:\project_website\laravel_8\web_gemmi\public\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project_website\github\backup\web_gemmi\resources\views\pages_user\donasi" />
       <recent name="D:\project_website\laravel_8\web_gemmi\public\assets\css" />
       <recent name="D:\project_website\laravel_8\web_gemmi\resources\views\pages_user\donasi" />
       <recent name="D:\project_website\laravel_8\web_gemmi\resources\views\pages_user" />
@@ -229,7 +240,7 @@
       <workItem from="1627957598853" duration="670000" />
       <workItem from="1627963392948" duration="3894000" />
       <workItem from="1628104264928" duration="1291000" />
-      <workItem from="1628170356219" duration="5745000" />
+      <workItem from="1628170356219" duration="7890000" />
     </task>
     <servers />
   </component>

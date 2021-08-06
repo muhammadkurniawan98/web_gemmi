@@ -117,6 +117,18 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group row">
+                                    <label for="level_user" class="col-md-4 col-form-label text-md-right">{{ __('Register Sebagai') }}</label>
+
+                                    <div class="col-md-6">
+                                        <select id="level_user" name="level_user" onselect="" class="form-control selectpicker">
+                                            <option>Donatur</option>
+                                            <option>Pengurus</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
                                 <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
