@@ -35,13 +35,13 @@ class SemuaJenisDonasi extends Migration
         Schema::create('buku', function (Blueprint $table){
             $table->id();
             $table->string('jenis_buku');
-            $table->string('tambahan_donasi')->nullable();
+            $table->string('keterangan')->nullable();
             $table->foreignId('donasi_id')->constrained('donasi');
         });
         Schema::create('dana', function (Blueprint $table){
             $table->id();
-            $table->string('jenis_dana');
-            $table->string('tambahan_donasi')->nullable();
+            $table->string('jumlah_dana');
+            $table->string('bank_rekening')->nullable();
             $table->foreignId('donasi_id')->constrained('donasi');
         });
     }

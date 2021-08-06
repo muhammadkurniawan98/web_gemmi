@@ -3,14 +3,52 @@
   <component name="ChangeListManager">
     <list default="true" id="be143e53-fe73-412b-b5b5-7e0300e136b8" name="Default Changelist" comment="version-1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Donasi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Donasi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DonasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DonasiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DonasiRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DonasiRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Buku.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Buku.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Dana.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Dana.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Donatur.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Donatur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/GNJ.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GNJ.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Sembako.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Sembako.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Snack.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Snack.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_25_191033_all_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_25_191033_all_tables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_08_05_133503_semua_jenis_donasi.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_08_05_133503_semua_jenis_donasi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog-inside-post.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog-recent-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog-recent-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/comments-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/comments-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/comments-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/portfolio/chess.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/team/team-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/team/team-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/testimonials/testimonials-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/testimonials/testimonials-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/testimonials/testimonials-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/buku.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/buku.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/DwETYjgjpP3lxLQCYk3rfReIsv9fJf40zx0xgqPp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/d1f3e28fa48a8ceb7af43709062a4760efd5ec60.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/d1f3e28fa48a8ceb7af43709062a4760efd5ec60.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/dana.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/dana.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/gnj.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/gnj.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/sembako.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/sembako.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/snack.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/snack.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donatur/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donatur/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/Zxi8sL7AZPNruYdx9nXE7uwDHsAEmXjoKSqE7bv8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/0b1f65e986574fd02f216e60346c5ad46b970b57.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0b1f65e986574fd02f216e60346c5ad46b970b57.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/19e2f12d333e3e7ef84842be6d8b068fca725f41.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/19e2f12d333e3e7ef84842be6d8b068fca725f41.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/83e05520e37b391c137e8d83b5141621cd8af447.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/83e05520e37b391c137e8d83b5141621cd8af447.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/867bfabacc5e871e839ff7d15f8ac422e008c52a.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/867bfabacc5e871e839ff7d15f8ac422e008c52a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/8c7407fc96215c3f53083fbd9f4e5bbb5f96eceb.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8c7407fc96215c3f53083fbd9f4e5bbb5f96eceb.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/dae2dd40af6b9fcd831384c4fe7583679c12047b.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/dae2dd40af6b9fcd831384c4fe7583679c12047b.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/f66734620a0b1194ed50e634fb4e36bddac5a796.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f66734620a0b1194ed50e634fb4e36bddac5a796.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,6 +222,7 @@
       <recent name="D:\project_website\laravel_8\web_gemmi\public\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project_website\github\backup\web_gemmi\public" />
       <recent name="D:\project_website\github\backup\web_gemmi\resources\views\pages_user\donasi" />
       <recent name="D:\project_website\laravel_8\web_gemmi\public\assets\css" />
       <recent name="D:\project_website\laravel_8\web_gemmi\resources\views\pages_user\donasi" />
@@ -240,7 +279,9 @@
       <workItem from="1627957598853" duration="670000" />
       <workItem from="1627963392948" duration="3894000" />
       <workItem from="1628104264928" duration="1291000" />
-      <workItem from="1628170356219" duration="7890000" />
+      <workItem from="1628170356219" duration="8885000" />
+      <workItem from="1628210294375" duration="12522000" />
+      <workItem from="1628244212255" duration="6179000" />
     </task>
     <servers />
   </component>

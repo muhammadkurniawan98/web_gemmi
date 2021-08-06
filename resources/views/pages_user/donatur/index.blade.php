@@ -25,6 +25,7 @@
 
                         <div class="card border-0">
                             <div class="card-header border-0">
+                                @if(auth()->check())
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-md-1">
                                         <a id="add" href="{{route('donatur.create')}}" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
@@ -35,6 +36,7 @@
                                         </label>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                             <div class="card-body border-0">
                                 <div class="row">

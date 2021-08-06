@@ -116,6 +116,18 @@ unset($__errorArgs, $__bag); ?>
                                         </div>
                                     </div>
 
+                                    <div class="form-group row">
+                                        <label for="kepentingan" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Kepentingan')); ?></label>
+
+                                        <div class="col-md-6">
+                                            <select id="kepentingan" name="level_user" onselect="" class="form-control selectpicker">
+                                                <option>Donatur</option>
+                                                <option>Pengurus</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
                                     <div class="form-group row mb-0">
                                         <div class="col-md-8 offset-md-4">
                                             <input type="button" name="btn" value="Submit" data-toggle="modal" data-target="#confirm-submit-tamu" class="btn btn-primary" />

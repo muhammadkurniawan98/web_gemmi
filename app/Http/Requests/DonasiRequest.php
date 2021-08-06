@@ -29,6 +29,7 @@ class DonasiRequest extends FormRequest
             'alamat'        => 'required|string|max:255',
             'no_telepon'    => 'required|regex:/^[0-9]+$/',
             'jenis_donasi'  => 'required|string|max:255',
+            'jumlah_donasi'  => 'required|string|max:255',
             'bukti_donasi'  => 'required|mimes:png,jpg,jpeg|max:2048',
             'tanggal'       => 'required|date_format:Y-m-d',
         ];

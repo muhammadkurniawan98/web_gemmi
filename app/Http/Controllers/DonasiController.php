@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\DonasiRequest;
+use App\Models\Buku;
 use App\Models\BukuTamu;
+use App\Models\Dana;
 use App\Models\Donasi;
 use App\Models\Donatur;
+use App\Models\GNJ;
+use App\Models\Sembako;
+use App\Models\Snack;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -49,25 +54,53 @@ class DonasiController extends Controller
     public function store(DonasiRequest $request)
     {
         if($request->validated()){
-
             $file = $request->file('bukti_donasi');
-
             $fileExt = $file->getClientOriginalExtension();
-
             $newFilename = (Str::random()).'.'.$fileExt;
-
             $file->move(public_path('\uploads\img'), $newFilename);
 
-            Donasi::create([
-                'user_id'        => auth()->user()->id,
-                'nama_donatur'   => $request->nama_donatur,
-                'nama_penerima'  => $request->nama_penerima,
-                'alamat'         => $request->alamat,
-                'no_telepon'     => $request->no_telepon,
-                'jenis_donasi'   => $request->jenis_donasi,
-                'bukti_donasi'   => $newFilename,
-                'tanggal'        => $request->tanggal,
-            ]);
+            $donasi = new Donasi();
+            $donasi->user_id = auth()->user()->id;
+            $donasi->nama_donatur = $request->nama_donatur;
+            $donasi->nama_penerima = $request->nama_penerima;
+            $donasi->alamat = $request->alamat;
+            $donasi->no_telepon = $request->no_telepon;
+            $donasi->jenis_donasi = $request->jenis_donasi;
+            $donasi->jumlah_donasi = $request->jumlah_donasi.' '.$request->format_jumlah;
+            $donasi->bukti_donasi = $newFilename;
+            $donasi->tanggal = $request->tanggal;
+            $donasi->save();
+
+            if($request->jenis_donasi == 'GNJ'){
+                $gnj = new GNJ();
+                $gnj->jenis_gnj = $request->jenis_nasi;
+                $gnj->tambahan_donasi = $request->tambahan_donasi_gnj;
+                $donasi->GNJ()->save($gnj);
+            }
+            if($request->jenis_donasi == 'Snack'){
+                $snack = new Snack();
+                $snack->jenis_snack = $request->jenis_snack;
+                $snack->tambahan_donasi = $request->tambahan_donasi_snack;
+                $donasi->Snack()->save($snack);
+            }
+            if($request->jenis_donasi == 'Sembako'){
+                $sembako = new Sembako();
+                $sembako->jenis_sembako = $request->jenis_sembako;
+                $sembako->tambahan_donasi = $request->tambahan_donasi_sembako;
+                $donasi->Sembako()->save($sembako);
+            }
+            if($request->jenis_donasi == 'Buku'){
+                $buku = new Buku();
+                $buku->jenis_buku = $request->jenis_buku;
+                $buku->keterangan = $request->keterangan;
+                $donasi->Buku()->save($buku);
+            }
+            if($request->jenis_donasi == 'Dana'){
+                $dana = new Dana();
+                $dana->jumlah_dana = $request->jumlah_dana;
+                $dana->bank_rekening = $request->bank_rekening;
+                $donasi->Dana()->save($dana);
+            }
         }
 
         return redirect()->route('donasi.success');

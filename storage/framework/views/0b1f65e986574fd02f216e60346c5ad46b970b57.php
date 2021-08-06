@@ -23,6 +23,7 @@
 
                         <div class="card border-0">
                             <div class="card-header border-0">
+                                <?php if(auth()->check()): ?>
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-md-1">
                                         <a id="add" href="<?php echo e(route('donasi.create')); ?>" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
@@ -33,6 +34,7 @@
                                         </label>
                                     </div>
                                 </div>
+                                <?php endif; ?>
                             </div>
                             <div class="card-body border-0">
                                 <div class="row">

@@ -8,13 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Dana extends Model
 {
     use HasFactory;
+    protected $table = 'dana';
+
     protected $fillable = [
-        'jenis_dana',
-        'tambahan_donasi',
+        'jumlah_dana',
+        'bank_rekening',
         'donasi_id'
     ];
 
     public function Donasi(){
         return $this->belongsTo(Donasi::class);
     }
+
+    public $timestamps = false;
 }

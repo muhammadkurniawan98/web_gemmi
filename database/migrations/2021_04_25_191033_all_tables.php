@@ -15,14 +15,14 @@ class AllTables extends Migration
     {
         Schema::create('buku_tamu', function (Blueprint $table){
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained('users');
             $table->string('nama');
             $table->string('alamat');
             $table->date('tanggal');
         });
         Schema::create('donatur', function (Blueprint $table){
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained('users');
             $table->string('nama');
             $table->string('status');
             $table->string('ttl');
@@ -32,7 +32,7 @@ class AllTables extends Migration
         });
         Schema::create('donasi', function (Blueprint $table){
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained('users');
             $table->string('nama_donatur');
             $table->string('nama_penerima');
             $table->string('alamat');
@@ -41,7 +41,7 @@ class AllTables extends Migration
             $table->string('jumlah_donasi');
             $table->string('bukti_donasi');
             $table->date('tanggal');
-            $table->string('status');
+            $table->string('status')->nullable()->default('belum diterima');
         });
     }
 

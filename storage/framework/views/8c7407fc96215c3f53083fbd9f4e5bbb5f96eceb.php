@@ -142,12 +142,62 @@ unset($__errorArgs, $__bag); ?>
 
                                         <div class="col-md-6">
                                             <select id="jenis_donasi" name="jenis_donasi" onselect="" class="form-control">
-                                                <option>Barang</option>
-                                                <option>Uang</option>
-                                                <option>Makanan</option>
+                                                <option>Pilih jenis donasi</option>
+                                                <option value="GNJ">GNJ</option>
+                                                <option value="Snack">Snack</option>
+                                                <option value="Sembako">Sembako</option>
+                                                <option value="Buku">Buku</option>
+                                                <option value="Dana">Dana</option>
                                             </select>
                                         </div>
+                                        <?php echo $__env->make('pages_user.donasi.dana', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                        <?php echo $__env->make('pages_user.donasi.buku', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                        <?php echo $__env->make('pages_user.donasi.sembako', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                        <?php echo $__env->make('pages_user.donasi.snack', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                        <?php echo $__env->make('pages_user.donasi.gnj', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                        <script>
+                                            $('#jenis_donasi').change(function (){
+                                                var modal = '#'+$(this).val().toLowerCase();
+                                                $(modal).modal('show');
+                                            });
+                                        </script>
+                                    </div>
 
+                                    <div class="form-group row">
+                                        <label for="jumlah_donasi" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Jumlah/Pack')); ?></label>
+
+                                        <div class="col-md-4">
+                                            <input id="jumlah_donasi" type="text" class="form-control <?php $__errorArgs = ['jumlah_donasi'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" name="jumlah_donasi" value="<?php echo e(old('jumlah_donasi')); ?>" autofocus>
+
+                                            <?php $__errorArgs = ['jumlah_donasi'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span class="invalid-feedback" role="alert">
+                                                    <strong><?php echo e($message); ?></strong>
+                                                </span>
+                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select name="format_jumlah" onselect="" class="form-control">
+                                                <option>kotak</option>
+                                                <option>bungkus</option>
+                                                <option>buah</option>
+                                                <option>dus</option>
+                                                <option>rupiah</option>
+                                            </select>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
@@ -248,6 +298,8 @@ unset($__errorArgs, $__bag); ?>
                                             </div>
                                         </div>
                                     </div>
+
+
                                 </form>
                                 <script>
                                     $('#submit').click(function(){
@@ -256,7 +308,7 @@ unset($__errorArgs, $__bag); ?>
                                     });
                                 </script>
                                 <?php else: ?>
-                                    <label>ANDA HARUS MENGISI TERLEBIH DAHULU MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU BUKU TAMU LALU PEMBERIAN DONASI.</label>
+                                    <label>ANDA HARUS MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU BUKU TAMU LALU PEMBERIAN DONASI.</label>
                                 <?php endif; ?>
                             </div>
                             <div class="card-footer border-0">

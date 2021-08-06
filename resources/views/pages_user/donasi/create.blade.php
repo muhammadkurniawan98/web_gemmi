@@ -88,12 +88,48 @@
 
                                         <div class="col-md-6">
                                             <select id="jenis_donasi" name="jenis_donasi" onselect="" class="form-control">
-                                                <option>Barang</option>
-                                                <option>Uang</option>
-                                                <option>Makanan</option>
+                                                <option>Pilih jenis donasi</option>
+                                                <option value="GNJ">GNJ</option>
+                                                <option value="Snack">Snack</option>
+                                                <option value="Sembako">Sembako</option>
+                                                <option value="Buku">Buku</option>
+                                                <option value="Dana">Dana</option>
                                             </select>
                                         </div>
+                                        @include('pages_user.donasi.dana')
+                                        @include('pages_user.donasi.buku')
+                                        @include('pages_user.donasi.sembako')
+                                        @include('pages_user.donasi.snack')
+                                        @include('pages_user.donasi.gnj')
+                                        <script>
+                                            $('#jenis_donasi').change(function (){
+                                                var modal = '#'+$(this).val().toLowerCase();
+                                                $(modal).modal('show');
+                                            });
+                                        </script>
+                                    </div>
 
+                                    <div class="form-group row">
+                                        <label for="jumlah_donasi" class="col-md-4 col-form-label text-md-right">{{ __('Jumlah/Pack') }}</label>
+
+                                        <div class="col-md-4">
+                                            <input id="jumlah_donasi" type="text" class="form-control @error('jumlah_donasi') is-invalid @enderror" name="jumlah_donasi" value="{{ old('jumlah_donasi') }}" autofocus>
+
+                                            @error('jumlah_donasi')
+                                            <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select name="format_jumlah" onselect="" class="form-control">
+                                                <option>kotak</option>
+                                                <option>bungkus</option>
+                                                <option>buah</option>
+                                                <option>dus</option>
+                                                <option>rupiah</option>
+                                            </select>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
@@ -165,6 +201,8 @@
                                             </div>
                                         </div>
                                     </div>
+{{--                                    <input type="hidden" name="jenis_donasi_value" id="jenis_donasi_value" value="">--}}
+{{--                                    <input type="hidden" name="jenis_donasi_value_tambahan_keterangan" id="jenis_donasi_value_tambahan_keterangan" value="">--}}
                                 </form>
                                 <script>
                                     $('#submit').click(function(){

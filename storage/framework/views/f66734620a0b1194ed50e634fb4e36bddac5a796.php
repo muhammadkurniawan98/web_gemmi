@@ -264,8 +264,8 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="card-footer border-0">
                                 <div class="row d-flex justify-content-around">
-                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('tamu.create')); ?>">ISI BUKU TAMU</a>
                                     <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donatur.create')); ?>">PENDAFTARAN DONATUR</a>
+                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('tamu.create')); ?>">ISI BUKU TAMU</a>
                                     <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donasi.create')); ?>">PEMBERIAN DONASI</a>
                                 </div>
                             </div>

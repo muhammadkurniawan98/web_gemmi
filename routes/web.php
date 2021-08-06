@@ -44,4 +44,9 @@ Route::group(['middleware' => 'auth'], function (){
     Route::post('/donasi/cari', [DonasiController::class, 'search'])->name('donasi.cari');
 });
 
+Route::get('/pdf', function (){
+    $donasi = \App\Models\Donasi::firstOrFail();
+    return view('laporan', $donasi);
+});
+
 

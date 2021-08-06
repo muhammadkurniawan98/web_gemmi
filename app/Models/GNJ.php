@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class GNJ extends Model
 {
     use HasFactory;
+    protected $table = 'gnj';
+
     protected $fillable = [
         'jenis_gnj',
         'tambahan_donasi',
@@ -16,4 +18,6 @@ class GNJ extends Model
     public function Donasi(){
         return $this->belongsTo(Donasi::class);
     }
+
+    public $timestamps = false;
 }

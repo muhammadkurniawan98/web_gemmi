@@ -24,16 +24,20 @@
 
                         <div class="card border-0">
                             <div class="card-header border-0">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-md-1">
-                                        <a id="add" href="<?php echo e(route('tamu.create')); ?>" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
+                                <?php if(auth()->check()): ?>
+                                    <?php if(!auth()->user()->admin): ?>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-md-1">
+                                            <a id="add" href="<?php echo e(route('tamu.create')); ?>" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
+                                        </div>
+                                        <div class="col-md-11 d-flex align-items-center justify-content-center">
+                                            <label for="add">
+                                                <h5>ISI BUKU TAMU</h5>
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="col-md-11 d-flex align-items-center justify-content-center">
-                                        <label for="add">
-                                            <h5>ISI BUKU TAMU</h5>
-                                        </label>
-                                    </div>
-                                </div>
+                                    <?php endif; ?>
+                                <?php endif; ?>
                             </div>
                             <div class="card-body border-0">
                                 <div class="row">
