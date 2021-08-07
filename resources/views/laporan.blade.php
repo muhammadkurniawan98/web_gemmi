@@ -34,6 +34,7 @@ div.cls_004{font-family:Arial,serif;font-size:14.0px;color:rgb(0,0,0);font-weigh
 <div style="position:absolute;left:142.85px;top:374.04px" class="cls_003"><span class="cls_003">Alamat</span></div>
 <div style="position:absolute;left:252.10px;top:374.04px" class="cls_003"><span class="cls_003">: {{ $alamat }}</span></div>
 <div style="position:absolute;left:142.85px;top:401.16px" class="cls_003"><span class="cls_003">Tanggal</span></div>
+<div style="position:absolute;left:252.10px;top:401.16px" class="cls_003"><span class="cls_003">: {{ implode('-',array_reverse(explode('-', $tanggal))) }}</span></div>
 <div style="position:absolute;left:142.85px;top:428.04px" class="cls_003"><span class="cls_003">No Telpon</span></div>
 <div style="position:absolute;left:252.10px;top:428.04px" class="cls_003"><span class="cls_003">: {{ $no_telepon }}</span></div>
 <div style="position:absolute;left:142.85px;top:455.18px" class="cls_003"><span class="cls_003">Jenis Donasi</span></div>

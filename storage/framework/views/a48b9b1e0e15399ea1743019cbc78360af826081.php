@@ -20,15 +20,9 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                <?php if(Auth::user()->admin): ?>
-                    <a class="dropdown-item" href="#">
-                        Admin Dashboard
-                    </a>
-                <?php endif; ?>
-
                 <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
-                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
                     <?php echo e(__('Logout')); ?>
 
                 </a>

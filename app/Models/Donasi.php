@@ -25,7 +25,9 @@ class Donasi extends Model
         'tanggal',
         'status'
     ];
-
+    public function User(){
+        return $this->belongsTo(User::class);
+    }
     public function Dana(){
         return $this->hasOne(Dana::class);
     }

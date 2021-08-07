@@ -26,16 +26,18 @@
                         <div class="card border-0">
                             <div class="card-header border-0">
                                 @if(auth()->check())
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-md-1">
-                                        <a id="add" href="{{route('donasi.create')}}" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
-                                    </div>
-                                    <div class="col-md-11 d-flex align-items-center justify-content-center">
-                                        <label for="add">
-                                            <h5>Beri Donasi</h5>
-                                        </label>
-                                    </div>
-                                </div>
+                                    @if(!auth()->user()->admin)
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-md-1">
+                                                <a id="add" href="{{route('donasi.create')}}" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
+                                            </div>
+                                            <div class="col-md-11 d-flex align-items-center justify-content-center">
+                                                <label for="add">
+                                                    <h5>Beri Donasi</h5>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    @endif
                                 @endif
                             </div>
                             <div class="card-body border-0">
@@ -58,10 +60,8 @@
                                                     <th>NO</th>
                                                     <th>DONATUR</th>
                                                     <th>PENERIMA</th>
-                                                    <th>ALAMAT</th>
-                                                    <th>JENIS</th>
-                                                    <th>BUKTI</th>
                                                     <th>TANGGAL</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -72,14 +72,20 @@
                                                             <td>{{$i++}}</td>
                                                             <td>{{$d->nama_donatur}}</td>
                                                             <td>{{$d->nama_penerima}}</td>
-                                                            <td>{{$d->alamat}}</td>
-                                                            <td>{{$d->jenis_donasi}}</td>
-                                                            <td>
-                                                                <a href="{{asset('uploads/img/'.$d->bukti_donasi)}}" data-gall="portfolioGallery" class="venobox" title="{{ $d->bukti_donasi }}">
-                                                                    <i class="icofont-picture"></i>
-                                                                </a>
-                                                            </td>
                                                             <td>{{$d->tanggal}}</td>
+                                                            <td>
+                                                                <div class="portfolio-links">
+                                                                    <a href="{{ route('donasi.detail', $d->id) }}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
+                                                                    @if(auth()->check())
+                                                                        @if(auth()->user()->admin)
+                                                                            @if($d->status == 'belum diterima')
+                                                                                <a class="btn btn-outline-success" href="">Terima</a>
+                                                                            @endif
+                                                                        @endif
+                                                                    @endif
+                                                                    <a class="btn btn-outline-secondary" href="{{ route('donasi.cetak', $d->id) }}">Cetak</a>
+                                                                </div>
+                                                            </td>
                                                         </tr>
                                                     @endforeach
                                                 @else

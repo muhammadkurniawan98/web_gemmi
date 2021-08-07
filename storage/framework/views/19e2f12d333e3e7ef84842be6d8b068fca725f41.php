@@ -25,7 +25,6 @@
                         <div class="card border-0">
                             <div class="card-header border-0">
                                 <?php if(auth()->check()): ?>
-                                    <?php if(!auth()->user()->admin): ?>
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-md-1">
                                             <a id="add" href="<?php echo e(route('tamu.create')); ?>" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
@@ -36,7 +35,6 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <?php endif; ?>
                                 <?php endif; ?>
                             </div>
                             <div class="card-body border-0">

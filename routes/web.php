@@ -42,6 +42,9 @@ Route::group(['middleware' => 'auth'], function (){
     Route::post('/tamu/cari', [BukutamuController::class, 'search'])->name('tamu.cari');
     Route::post('/donatur/cari', [DonaturController::class, 'search'])->name('donatur.cari');
     Route::post('/donasi/cari', [DonasiController::class, 'search'])->name('donasi.cari');
+    Route::get('/donasi/saya', [DonasiController::class, 'search'])->name('donasi.saya');
+    Route::get('/donasi/{donasi}/detail', [DonasiController::class, 'detail'])->name('donasi.detail');
+    Route::get('/donasi/{donasi}/cetak', [DonasiController::class, 'cetak'])->name('donasi.cetak');
 });
 
 Route::get('/pdf', function (){

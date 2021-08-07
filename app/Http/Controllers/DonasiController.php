@@ -11,6 +11,7 @@ use App\Models\Donatur;
 use App\Models\GNJ;
 use App\Models\Sembako;
 use App\Models\Snack;
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -27,6 +28,12 @@ class DonasiController extends Controller
         $donasi = Donasi::paginate(10);
 
         return view('pages_user.donasi.index')->with('donasi', $donasi);
+    }
+
+    public function userDonation(){
+        $donasi = auth()->user()->Donasi->paginate(10);
+
+        return view();
     }
 
     public function create()
@@ -105,6 +112,7 @@ class DonasiController extends Controller
 
         return redirect()->route('donasi.success');
     }
+
     public function search(Request $request){
         $keyword = $request->keyword;
         if(trim($keyword) == ''){
@@ -121,5 +129,14 @@ class DonasiController extends Controller
                             ->paginate(10);
             return view('pages_user.donasi.index')->with('donasi', $donasi);
         }
+    }
+
+    public function detail(Donasi $donasi){
+        return view('pages_user.donasi.donasi-detail', ['donasi' => $donasi]);
+    }
+
+    public function cetak(Donasi $donasi){
+        $pdf = PDF::loadView('laporan', $donasi);
+        return $pdf->download('laporan_serah_terima_donasi.pdf');
     }
 }

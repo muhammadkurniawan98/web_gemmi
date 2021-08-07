@@ -3,10 +3,7 @@
     <div class="container d-flex align-items-center">
 
         <h1 class="logo"><a href="<?php echo e(url('/')); ?>" class="btn-icon"><?php echo e(config('app.name', 'Laravel')); ?></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-        <!-- .nav-menu -->
         <nav class="nav-menu d-none d-lg-block">
 
             <ul>
@@ -46,12 +43,6 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                <?php if(Auth::user()->admin): ?>
-                    <a class="dropdown-item" href="#">
-                        Admin Dashboard
-                    </a>
-                <?php endif; ?>
-
                 <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -66,5 +57,5 @@
         <?php endif; ?>
 
     </div>
-</header><!-- End Header -->
+</header>
 <?php /**PATH D:\project_website\github\backup\web_gemmi\resources\views/layouts/include/header-gemmi.blade.php ENDPATH**/ ?>

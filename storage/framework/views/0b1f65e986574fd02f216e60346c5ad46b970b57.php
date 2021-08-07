@@ -24,16 +24,18 @@
                         <div class="card border-0">
                             <div class="card-header border-0">
                                 <?php if(auth()->check()): ?>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-md-1">
-                                        <a id="add" href="<?php echo e(route('donasi.create')); ?>" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
-                                    </div>
-                                    <div class="col-md-11 d-flex align-items-center justify-content-center">
-                                        <label for="add">
-                                            <h5>Beri Donasi</h5>
-                                        </label>
-                                    </div>
-                                </div>
+                                    <?php if(!auth()->user()->admin): ?>
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-md-1">
+                                                <a id="add" href="<?php echo e(route('donasi.create')); ?>" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
+                                            </div>
+                                            <div class="col-md-11 d-flex align-items-center justify-content-center">
+                                                <label for="add">
+                                                    <h5>Beri Donasi</h5>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
                                 <?php endif; ?>
                             </div>
                             <div class="card-body border-0">
@@ -56,10 +58,8 @@
                                                     <th>NO</th>
                                                     <th>DONATUR</th>
                                                     <th>PENERIMA</th>
-                                                    <th>ALAMAT</th>
-                                                    <th>JENIS</th>
-                                                    <th>BUKTI</th>
                                                     <th>TANGGAL</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -70,14 +70,20 @@
                                                             <td><?php echo e($i++); ?></td>
                                                             <td><?php echo e($d->nama_donatur); ?></td>
                                                             <td><?php echo e($d->nama_penerima); ?></td>
-                                                            <td><?php echo e($d->alamat); ?></td>
-                                                            <td><?php echo e($d->jenis_donasi); ?></td>
-                                                            <td>
-                                                                <a href="<?php echo e(asset('uploads/img/'.$d->bukti_donasi)); ?>" data-gall="portfolioGallery" class="venobox" title="<?php echo e($d->bukti_donasi); ?>">
-                                                                    <i class="icofont-picture"></i>
-                                                                </a>
-                                                            </td>
                                                             <td><?php echo e($d->tanggal); ?></td>
+                                                            <td>
+                                                                <div class="portfolio-links">
+                                                                    <a href="<?php echo e(route('donasi.detail', $d->id)); ?>" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
+                                                                    <?php if(auth()->check()): ?>
+                                                                        <?php if(auth()->user()->admin): ?>
+                                                                            <?php if($d->status == 'belum diterima'): ?>
+                                                                                <a class="btn btn-outline-success" href="">Terima</a>
+                                                                            <?php endif; ?>
+                                                                        <?php endif; ?>
+                                                                    <?php endif; ?>
+                                                                    <a class="btn btn-outline-secondary" href="<?php echo e(route('donasi.cetak', $d->id)); ?>">Cetak</a>
+                                                                </div>
+                                                            </td>
                                                         </tr>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 <?php else: ?>

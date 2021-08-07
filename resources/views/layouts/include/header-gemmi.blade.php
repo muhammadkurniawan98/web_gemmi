@@ -3,10 +3,7 @@
     <div class="container d-flex align-items-center">
 
         <h1 class="logo"><a href="{{ url('/') }}" class="btn-icon">{{config('app.name', 'Laravel')}}</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-        <!-- .nav-menu -->
         <nav class="nav-menu d-none d-lg-block">
 
             <ul>
@@ -45,12 +42,6 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                @if(Auth::user()->admin)
-                    <a class="dropdown-item" href="#">
-                        Admin Dashboard
-                    </a>
-                @endif
-
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -64,4 +55,4 @@
         @endguest
 
     </div>
-</header><!-- End Header -->
+</header>
