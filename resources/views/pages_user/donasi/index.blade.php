@@ -81,7 +81,9 @@
                                                             <td>{{$d->status}}</td>
                                                             <td>
                                                                 <div class="portfolio-links">
-                                                                    <a href="{{ route('donasi.detail', $d->id) }}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
+                                                                    @if($d->user_id == auth()->user()->id)
+                                                                        <a href="{{ route('donasi.detail', $d->id) }}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
+                                                                    @endif
                                                                     @if(auth()->check())
                                                                         @if(auth()->user()->admin)
                                                                             @if($d->status == 'belum diterima')

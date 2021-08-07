@@ -80,7 +80,9 @@
                                                             <td><?php echo e($d->status); ?></td>
                                                             <td>
                                                                 <div class="portfolio-links">
-                                                                    <a href="<?php echo e(route('donasi.detail', $d->id)); ?>" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
+                                                                    <?php if($d->user_id == auth()->user()->id): ?>
+                                                                        <a href="<?php echo e(route('donasi.detail', $d->id)); ?>" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
+                                                                    <?php endif; ?>
                                                                     <?php if(auth()->check()): ?>
                                                                         <?php if(auth()->user()->admin): ?>
                                                                             <?php if($d->status == 'belum diterima'): ?>
@@ -88,7 +90,9 @@
                                                                             <?php endif; ?>
                                                                         <?php endif; ?>
                                                                     <?php endif; ?>
-                                                                    <a class="btn btn-outline-secondary" href="<?php echo e(route('donasi.cetak', $d->id)); ?>">Cetak</a>
+                                                                    <?php if($d->user_id == auth()->user()->id): ?>
+                                                                        <a class="btn btn-outline-secondary" href="<?php echo e(route('donasi.cetak', $d->id)); ?>">Cetak</a>
+                                                                    <?php endif; ?>
                                                                 </div>
                                                             </td>
                                                         </tr>
