@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <main id="main">
 
@@ -25,11 +23,11 @@
 
                         <div class="card border-0">
                             <div class="card-header border-0">
-                                @if(auth()->check())
-                                    @if(!auth()->user()->admin)
+                                <?php if(auth()->check()): ?>
+                                    <?php if(!auth()->user()->admin): ?>
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-md-1">
-                                                <a id="add" href="{{route('donasi.create')}}" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
+                                                <a id="add" href="<?php echo e(route('donasi.create')); ?>" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
                                             </div>
                                             <div class="col-md-11 d-flex align-items-center justify-content-center">
                                                 <label for="add">
@@ -37,14 +35,14 @@
                                                 </label>
                                             </div>
                                         </div>
-                                    @endif
-                                @endif
+                                    <?php endif; ?>
+                                <?php endif; ?>
                             </div>
                             <div class="card-body border-0">
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <form action="{{route('donasi.cari')}}" method="POST">
-                                            @csrf
+                                        <form action="<?php echo e(route('donasi.cari')); ?>" method="POST">
+                                            <?php echo csrf_field(); ?>
                                             <div class="input-group">
                                                 <input  class="form-control" type="text" name="keyword" placeholder="cari donasi">
                                                 <input class="btn btn-primary" type="submit" value="cari">
@@ -66,37 +64,38 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @if($i = 1 + (($donasi->currentPage()>=1?$donasi->currentPage():1) - 1) * $donasi->perPage())
-                                                @if(count($donasi) > 0)
-                                                    @foreach($donasi as $d)
+                                            <?php if($i = 1 + (($donasi->currentPage()>=1?$donasi->currentPage():1) - 1) * $donasi->perPage()): ?>
+                                                <?php if(count($donasi) > 0): ?>
+                                                    <?php $__currentLoopData = $donasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                         <tr>
-                                                            <td>{{$i++}}</td>
-                                                            <td>{{$d->nama_donatur}}</td>
-                                                            <td>{{$d->nama_penerima}}</td>
-                                                            <td>{{$d->tanggal}}</td>
-                                                            <td>{{$d->status}}</td>
+                                                            <td><?php echo e($i++); ?></td>
+                                                            <td><?php echo e($d->nama_donatur); ?></td>
+                                                            <td><?php echo e($d->nama_penerima); ?></td>
+                                                            <td><?php echo e($d->tanggal); ?></td>
+                                                            <td><?php echo e($d->status); ?></td>
                                                             <td>
                                                                 <div class="portfolio-links">
-                                                                    <a href="{{ route('donasi.detail', $d->id) }}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
-                                                                    <a class="btn btn-outline-secondary" href="{{ route('donasi.cetak', $d->id) }}">Cetak</a>
+                                                                    <a href="<?php echo e(route('donasi.detail', $d->id)); ?>" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
+                                                                    <a class="btn btn-outline-secondary" href="<?php echo e(route('donasi.cetak', $d->id)); ?>">Cetak</a>
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                    @endforeach
-                                                @else
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                <?php else: ?>
                                                     <tr>
                                                         <td>Belum ada donasi yang anda berikan</td>
                                                     </tr>
-                                                @endif
+                                                <?php endif; ?>
                                             </tbody>
-                                            @endif
+                                            <?php endif; ?>
                                         </table>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="card-footer border-0">
-                                {{$donasi->links('pagination::bootstrap-4')}}
+                                <?php echo e($donasi->links('pagination::bootstrap-4')); ?>
+
                             </div>
                         </div>
 
@@ -108,4 +107,6 @@
 
     </main>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\project_website\github\backup\web_gemmi\resources\views/pages_user/donasi/donasi_user.blade.php ENDPATH**/ ?>

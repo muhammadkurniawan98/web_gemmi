@@ -241,7 +241,7 @@ unset($__errorArgs, $__bag); ?>
                                                     Pesan
                                                 </div>
                                                 <div class="modal-body">
-                                                    PASTIKAN SEMUA INFORMASI YANG ANDA BERIKAN BENAR.
+                                                    Pastikan semua informasi yang anda berikan benar.
                                                 </div>
 
                                                 <div class="modal-footer">
@@ -259,15 +259,9 @@ unset($__errorArgs, $__bag); ?>
                                     });
                                 </script>
                                 <?php else: ?>
-                                    <label>ANDA SUDAH MENDAFTAR SEBAGAI DONATUR.</label>
+                                    <label>Anda sudah mendaftar sebagai donatur. Silahkan pilih kepentingan anda.</label>
+                                    <label>Apakah anda ingin mengisi <a href="<?php echo e(route('tamu.create')); ?>">buku tamu</a>, atau memberikan <a href="<?php echo e(route('donasi.create')); ?>">donasi</a>?</label>
                                 <?php endif; ?>
-                            </div>
-                            <div class="card-footer border-0">
-                                <div class="row d-flex justify-content-around">
-                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donatur.create')); ?>">PENDAFTARAN DONATUR</a>
-                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('tamu.create')); ?>">ISI BUKU TAMU</a>
-                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donasi.create')); ?>">PEMBERIAN DONASI</a>
-                                </div>
                             </div>
                         </div>
                     </div>

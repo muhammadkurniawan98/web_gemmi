@@ -11,6 +11,7 @@ class BukutamuController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['index']);
+        $this->middleware('userfilter')->except(['index', 'search']);
     }
 
     public function index()
@@ -50,7 +51,13 @@ class BukutamuController extends Controller
             ]);
         }
 
-        return redirect()->route('tamu.success');
+        if($request->kepentingan == 'Melihat Informasi'){
+            return redirect('/');
+        }
+        else{
+            return redirect()->route('donasi.create');
+        }
+
     }
     public function search(Request $request){
         $keyword = $request->keyword;

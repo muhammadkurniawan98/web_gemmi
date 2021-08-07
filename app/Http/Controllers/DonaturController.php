@@ -11,6 +11,7 @@ class DonaturController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['index']);
+        $this->middleware('userfilter')->except(['index', 'search']);
     }
 
     public function index()
@@ -45,7 +46,7 @@ class DonaturController extends Controller
             ]);
         }
 
-        return redirect()->route('donatur.success');
+        return redirect()->route('tamu.create');
     }
     public function search(Request $request){
         $keyword = $request->keyword;

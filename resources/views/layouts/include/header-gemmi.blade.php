@@ -22,9 +22,26 @@
                         <li><a href="{{'#footer'}}">Kontak</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="{{route('donasi.create')}}">Donasi</a>
-                </li>
+                @if(auth()->check())
+                    @if(!auth()->user()->admin)
+                        @if(auth()->user()->Donatur==null)
+                            <li>
+                                <a href="{{route('donatur.create')}}">Pendaftaran Donatur</a>
+                            </li>
+                        @else
+                            <li>
+                                <a href="{{route('donasi.create')}}">Beri Donasi</a>
+                            </li>
+                            <li>
+                                <a href="{{route('donasi.saya', auth()->user()->id)}}">Donasi Saya</a>
+                            </li>
+                        @endif
+                    @else
+                        <li><a href="{{ route('jumlah.tamu') }}">Jumlah Tamu</a></li>
+                        <li><a href="{{ route('jumlah.donatur') }}">Jumlah Donatur</a></li>
+                        <li><a href="{{ route('jumlah.donasi') }}">Jumlah Donasi</a></li>
+                    @endif
+                @endif
             </ul>
 
         </nav>

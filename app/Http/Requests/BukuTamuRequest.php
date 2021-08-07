@@ -27,6 +27,7 @@ class BukuTamuRequest extends FormRequest
             'nama'              => 'required|string|max:255',
             'alamat'            => 'required|string|max:255',
             'tanggal'           => 'required|date_format:Y-m-d',
+            'kepentingan'           => 'string',
         ];
     }
 }

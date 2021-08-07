@@ -42,14 +42,20 @@ Route::group(['middleware' => 'auth'], function (){
     Route::post('/tamu/cari', [BukutamuController::class, 'search'])->name('tamu.cari');
     Route::post('/donatur/cari', [DonaturController::class, 'search'])->name('donatur.cari');
     Route::post('/donasi/cari', [DonasiController::class, 'search'])->name('donasi.cari');
-    Route::get('/donasi/saya', [DonasiController::class, 'search'])->name('donasi.saya');
+    Route::get('/donasi/{id}/index', [DonasiController::class, 'userDonation'])->name('donasi.saya');
     Route::get('/donasi/{donasi}/detail', [DonasiController::class, 'detail'])->name('donasi.detail');
     Route::get('/donasi/{donasi}/cetak', [DonasiController::class, 'cetak'])->name('donasi.cetak');
-});
+    Route::get('/donasi/{donasi}/terima', [DonasiController::class, 'update'])->name('donasi.terima');
 
-Route::get('/pdf', function (){
-    $donasi = \App\Models\Donasi::firstOrFail();
-    return view('laporan', $donasi);
+    Route::get('/jumlah-tamu', function (){
+        return view('jumlah_tamu', ['jumlah' => count(\App\Models\BukuTamu::all())]);
+    })->name('jumlah.tamu');
+    Route::get('/jumlah-donatur', function (){
+        return view('jumlah_donatur', ['jumlah' => count(\App\Models\Donatur::all())]);
+    })->name('jumlah.donatur');
+    Route::get('/jumlah-donasi', function (){
+        return view('jumlah_donasi', ['jumlah' => count(\App\Models\Donasi::all())]);
+    })->name('jumlah.donasi');
 });
 
 

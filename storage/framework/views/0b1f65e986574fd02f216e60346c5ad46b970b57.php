@@ -20,7 +20,12 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-12">
+                        <?php if(Session::has('success')): ?>
+                            <div class="alert-success">
+                                <?php echo e(Session::get('success')); ?>
 
+                            </div>
+                        <?php endif; ?>
                         <div class="card border-0">
                             <div class="card-header border-0">
                                 <?php if(auth()->check()): ?>
@@ -59,6 +64,7 @@
                                                     <th>DONATUR</th>
                                                     <th>PENERIMA</th>
                                                     <th>TANGGAL</th>
+                                                    <th>STATUS</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -71,13 +77,14 @@
                                                             <td><?php echo e($d->nama_donatur); ?></td>
                                                             <td><?php echo e($d->nama_penerima); ?></td>
                                                             <td><?php echo e($d->tanggal); ?></td>
+                                                            <td><?php echo e($d->status); ?></td>
                                                             <td>
                                                                 <div class="portfolio-links">
                                                                     <a href="<?php echo e(route('donasi.detail', $d->id)); ?>" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
                                                                     <?php if(auth()->check()): ?>
                                                                         <?php if(auth()->user()->admin): ?>
                                                                             <?php if($d->status == 'belum diterima'): ?>
-                                                                                <a class="btn btn-outline-success" href="">Terima</a>
+                                                                                <a class="btn btn-outline-success" href="<?php echo e(route('donasi.terima', $d->id)); ?>">Terima</a>
                                                                             <?php endif; ?>
                                                                         <?php endif; ?>
                                                                     <?php endif; ?>
@@ -88,7 +95,7 @@
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 <?php else: ?>
                                                     <tr>
-                                                        <td>Belum ada donasi yang anda berikan</td>
+                                                        <td>Belum ada donasi terkumpul</td>
                                                     </tr>
                                                 <?php endif; ?>
                                             </tbody>

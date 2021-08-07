@@ -26,16 +26,18 @@
                         <div class="card border-0">
                             <div class="card-header border-0">
                                 @if(auth()->check())
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-md-1">
-                                        <a id="add" href="{{route('donatur.create')}}" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
-                                    </div>
-                                    <div class="col-md-11 d-flex align-items-center justify-content-center">
-                                        <label for="add">
-                                            <h5>DAFTAR SEBAGAI DONATUR</h5>
-                                        </label>
-                                    </div>
-                                </div>
+                                    @if(!auth()->user()->admin)
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-md-1">
+                                                <a id="add" href="{{route('donatur.create')}}" class="btn btn-outline-success"><i class="icofont-plus"></i></a>
+                                            </div>
+                                            <div class="col-md-11 d-flex align-items-center justify-content-center">
+                                                <label for="add">
+                                                    <h5>DAFTAR SEBAGAI DONATUR</h5>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    @endif
                                 @endif
                             </div>
                             <div class="card-body border-0">

@@ -21,6 +21,7 @@ class DonasiController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['index']);
+        $this->middleware('userfilter')->except(['index', 'search', 'detail', 'cetak', 'update']);
     }
 
     public function index()
@@ -30,29 +31,27 @@ class DonasiController extends Controller
         return view('pages_user.donasi.index')->with('donasi', $donasi);
     }
 
-    public function userDonation(){
-        $donasi = auth()->user()->Donasi->paginate(10);
+    public function userDonation($id){
+        $donasi = Donasi::where('user_id', $id)->paginate(10);
 
-        return view();
+        return view('pages_user.donasi.donasi_user')->with('donasi', $donasi);
     }
 
     public function create()
     {
-        date_default_timezone_set('Asia/Jakarta');
-
         $id = auth()->user()->id;
 
         $tanggal = date('Y-m-d');
 
-        $donatur = Donatur::where('user_id', $id)->paginate(1);
+        $donatur = Donatur::where('user_id', $id)->get();
 
-        $tamuId = BukuTamu::where('user_id', $id)->paginate(1);
+        $tamuId = BukuTamu::where('user_id', $id)->get();
 
-        $tamuTanggal = BukuTamu::where('tanggal', $tanggal)->paginate(1);
+        $tamuTanggal = BukuTamu::where('tanggal', $tanggal)->get();
 
         $data = [
-            'status_tamu' => ((count($tamuId) === 1) && (count($tamuTanggal) === 1)),
-            'status_donatur' => count($donatur) === 1
+            'status_tamu' => ((count($tamuId) >= 1) && (count($tamuTanggal) >= 1)),
+            'status_donatur' => count($donatur) >= 1
         ];
 
         return view('pages_user.donasi.create', $data);
@@ -110,7 +109,7 @@ class DonasiController extends Controller
             }
         }
 
-        return redirect()->route('donasi.success');
+        return redirect()->route('donasi.index')->with('success', 'Donasi berhasil dikirim. Terima kasih telah berdonasi.');
     }
 
     public function search(Request $request){
@@ -129,6 +128,11 @@ class DonasiController extends Controller
                             ->paginate(10);
             return view('pages_user.donasi.index')->with('donasi', $donasi);
         }
+    }
+
+    public function update(Donasi $donasi){
+        $donasi->update(['status' => 'sudah diterima']);
+        return redirect(route('donasi.index'))->with('success', 'Donasi sudah diterima');
     }
 
     public function detail(Donasi $donasi){

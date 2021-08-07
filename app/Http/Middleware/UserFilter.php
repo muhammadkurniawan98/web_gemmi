@@ -16,6 +16,14 @@ class UserFilter
      */
     public function handle(Request $request, Closure $next)
     {
+        if(auth()->check()){
+            if(auth()->user()->admin){
+                abort(404);
+            }
+        }
+        else{
+            return route('login');
+        }
         return $next($request);
     }
 }

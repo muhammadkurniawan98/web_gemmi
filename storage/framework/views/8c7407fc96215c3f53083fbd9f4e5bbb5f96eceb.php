@@ -196,6 +196,8 @@ unset($__errorArgs, $__bag); ?>
                                                 <option>buah</option>
                                                 <option>dus</option>
                                                 <option>rupiah</option>
+                                                <option>lusin</option>
+                                                <option>karung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -288,7 +290,7 @@ unset($__errorArgs, $__bag); ?>
                                                     Pesan
                                                 </div>
                                                 <div class="modal-body">
-                                                    TERIMAKASIH TELAH MELAKUKAN DONASI.
+                                                    Terimakasih telah melakukan donasi.
                                                 </div>
 
                                                 <div class="modal-footer">
@@ -308,15 +310,12 @@ unset($__errorArgs, $__bag); ?>
                                     });
                                 </script>
                                 <?php else: ?>
-                                    <label>ANDA HARUS MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU BUKU TAMU LALU PEMBERIAN DONASI.</label>
+                                    <?php if(!$status_tamu): ?>
+                                        <label>Anda harus mengisi <a>buku tamu</a> terlebih dahulu.</label>
+                                    <?php else: ?>
+                                        <label>Anda harus terdaftar sebagai <a>donatur</a> terlebih dahulu.</label>
+                                    <?php endif; ?>
                                 <?php endif; ?>
-                            </div>
-                            <div class="card-footer border-0">
-                                <div class="row d-flex justify-content-around">
-                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donatur.create')); ?>">PENDAFTARAN DONATUR</a>
-                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('tamu.create')); ?>">ISI BUKU TAMU</a>
-                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donasi.create')); ?>">PEMBERIAN DONASI</a>
-                                </div>
                             </div>
                         </div>
                     </div>

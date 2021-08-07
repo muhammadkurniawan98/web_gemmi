@@ -145,7 +145,7 @@
                                                     Pesan
                                                 </div>
                                                 <div class="modal-body">
-                                                    PASTIKAN SEMUA INFORMASI YANG ANDA BERIKAN BENAR.
+                                                    Pastikan semua informasi yang anda berikan benar.
                                                 </div>
 
                                                 <div class="modal-footer">
@@ -163,15 +163,9 @@
                                     });
                                 </script>
                                 @else
-                                    <label>ANDA SUDAH MENDAFTAR SEBAGAI DONATUR.</label>
+                                    <label>Anda sudah mendaftar sebagai donatur. Silahkan pilih kepentingan anda.</label>
+                                    <label>Apakah anda ingin mengisi <a href="{{ route('tamu.create') }}">buku tamu</a>, atau memberikan <a href="{{ route('donasi.create') }}">donasi</a>?</label>
                                 @endif
-                            </div>
-                            <div class="card-footer border-0">
-                                <div class="row d-flex justify-content-around">
-                                    <a class="btn avatar-dropdown-btn" href="{{route('donatur.create')}}">PENDAFTARAN DONATUR</a>
-                                    <a class="btn avatar-dropdown-btn" href="{{route('tamu.create')}}">ISI BUKU TAMU</a>
-                                    <a class="btn avatar-dropdown-btn" href="{{route('donasi.create')}}">PEMBERIAN DONASI</a>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -120,9 +120,9 @@ unset($__errorArgs, $__bag); ?>
                                         <label for="kepentingan" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Kepentingan')); ?></label>
 
                                         <div class="col-md-6">
-                                            <select id="kepentingan" name="level_user" onselect="" class="form-control selectpicker">
-                                                <option>Donatur</option>
-                                                <option>Pengurus</option>
+                                            <select id="kepentingan" name="kepentingan" onselect="" class="form-control selectpicker">
+                                                <option>Melihat Informasi</option>
+                                                <option>Memberi Donasi</option>
                                             </select>
                                         </div>
 
@@ -159,15 +159,9 @@ unset($__errorArgs, $__bag); ?>
                                     });
                                 </script>
                                 <?php else: ?>
-                                    <label>ANDA SUDAH MENGISI BUKU TAMU HARI INI.</label>
+                                    <label>Anda sudah mengisi buku tamu hari ini. Silahkan pilih kepentingan anda.</label>
+                                    <label>Apa anda ingin memberikan <a href="<?php echo e(route('donasi.create')); ?>">donasi</a> atau melihat <a href="/">informasi</a>?</label>
                                 <?php endif; ?>
-                            </div>
-                            <div class="card-footer border-0">
-                                <div class="row d-flex justify-content-around">
-                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donatur.create')); ?>">PENDAFTARAN DONATUR</a>
-                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('tamu.create')); ?>">ISI BUKU TAMU</a>
-                                    <a class="btn avatar-dropdown-btn" href="<?php echo e(route('donasi.create')); ?>">PEMBERIAN DONASI</a>
-                                </div>
                             </div>
                         </div>
                     </div>

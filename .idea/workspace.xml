@@ -3,24 +3,36 @@
   <component name="ChangeListManager">
     <list default="true" id="be143e53-fe73-412b-b5b5-7e0300e136b8" name="Default Changelist" comment="version-1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BukutamuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BukutamuController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DonasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DonasiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/BukuTamu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BukuTamu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Donasi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Donasi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Donatur.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Donatur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/laporan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/laporan.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/include/header-app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/include/header-app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DonaturController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DonaturController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/DonasiFilter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/UserFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/UserFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BukuTamuRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BukuTamuRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/include/header-gemmi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/include/header-gemmi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages_admin/dashboard.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/create-success.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/buku_tamu/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/create-success.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/donasi_user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/donasi_user.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/rekapitulasi_donasi_user.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donatur/create-success.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donatur/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donatur/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donatur/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donatur/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/WDukMjSMcfk8dwRG3AcGkKM7lmy4icCK0hUp8WBa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/rMyMpig5bGEtLNcjDbQ9MHfQ9Asv4PlOvMqyIeIy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/61/79/6179aa93247bffcec8d19108afee7dfa0f445906" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/b7/28/b728b3a90f735c3fd866acff73de3150ae3bc105" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/aLlMro8IYofm3PR2mR3qLwryGEKlmeRqJ1uRi6MJ" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/0b1f65e986574fd02f216e60346c5ad46b970b57.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0b1f65e986574fd02f216e60346c5ad46b970b57.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/19e2f12d333e3e7ef84842be6d8b068fca725f41.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/19e2f12d333e3e7ef84842be6d8b068fca725f41.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/3d3f8ce3e23c3dec28738bf002ceec7238261fba.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/3d3f8ce3e23c3dec28738bf002ceec7238261fba.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/a48b9b1e0e15399ea1743019cbc78360af826081.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/a48b9b1e0e15399ea1743019cbc78360af826081.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/867bfabacc5e871e839ff7d15f8ac422e008c52a.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/867bfabacc5e871e839ff7d15f8ac422e008c52a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/8c7407fc96215c3f53083fbd9f4e5bbb5f96eceb.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8c7407fc96215c3f53083fbd9f4e5bbb5f96eceb.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/bd5b2ff98b91d8b988406d34903c4646b099099a.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/bd5b2ff98b91d8b988406d34903c4646b099099a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/f66734620a0b1194ed50e634fb4e36bddac5a796.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f66734620a0b1194ed50e634fb4e36bddac5a796.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,7 +266,8 @@
       <workItem from="1628104264928" duration="1291000" />
       <workItem from="1628170356219" duration="8885000" />
       <workItem from="1628210294375" duration="12522000" />
-      <workItem from="1628244212255" duration="18125000" />
+      <workItem from="1628244212255" duration="24758000" />
+      <workItem from="1628324642580" duration="2706000" />
     </task>
     <servers />
   </component>

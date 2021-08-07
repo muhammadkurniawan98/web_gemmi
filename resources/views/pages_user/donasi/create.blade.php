@@ -128,6 +128,8 @@
                                                 <option>buah</option>
                                                 <option>dus</option>
                                                 <option>rupiah</option>
+                                                <option>lusin</option>
+                                                <option>karung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -191,7 +193,7 @@
                                                     Pesan
                                                 </div>
                                                 <div class="modal-body">
-                                                    TERIMAKASIH TELAH MELAKUKAN DONASI.
+                                                    Terimakasih telah melakukan donasi.
                                                 </div>
 
                                                 <div class="modal-footer">
@@ -211,15 +213,12 @@
                                     });
                                 </script>
                                 @else
-                                    <label>ANDA HARUS MELAKUKAN PENDAFTARAN DONATUR SETELAH ITU BUKU TAMU LALU PEMBERIAN DONASI.</label>
+                                    @if(!$status_tamu)
+                                        <label>Anda harus mengisi <a>buku tamu</a> terlebih dahulu.</label>
+                                    @else
+                                        <label>Anda harus terdaftar sebagai <a>donatur</a> terlebih dahulu.</label>
+                                    @endif
                                 @endif
-                            </div>
-                            <div class="card-footer border-0">
-                                <div class="row d-flex justify-content-around">
-                                    <a class="btn avatar-dropdown-btn" href="{{route('donatur.create')}}">PENDAFTARAN DONATUR</a>
-                                    <a class="btn avatar-dropdown-btn" href="{{route('tamu.create')}}">ISI BUKU TAMU</a>
-                                    <a class="btn avatar-dropdown-btn" href="{{route('donasi.create')}}">PEMBERIAN DONASI</a>
-                                </div>
                             </div>
                         </div>
                     </div>

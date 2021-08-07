@@ -22,9 +22,26 @@
                         <li><a href="<?php echo e('#footer'); ?>">Kontak</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="<?php echo e(route('donasi.create')); ?>">Donasi</a>
-                </li>
+                <?php if(auth()->check()): ?>
+                    <?php if(!auth()->user()->admin): ?>
+                        <?php if(auth()->user()->Donatur==null): ?>
+                            <li>
+                                <a href="<?php echo e(route('donatur.create')); ?>">Pendaftaran Donatur</a>
+                            </li>
+                        <?php else: ?>
+                            <li>
+                                <a href="<?php echo e(route('donasi.create')); ?>">Beri Donasi</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo e(route('donasi.saya', auth()->user()->id)); ?>">Donasi Saya</a>
+                            </li>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <li><a href="<?php echo e(route('jumlah.tamu')); ?>">Jumlah Tamu</a></li>
+                        <li><a href="<?php echo e(route('jumlah.donatur')); ?>">Jumlah Donatur</a></li>
+                        <li><a href="<?php echo e(route('jumlah.donasi')); ?>">Jumlah Donasi</a></li>
+                    <?php endif; ?>
+                <?php endif; ?>
             </ul>
 
         </nav>
