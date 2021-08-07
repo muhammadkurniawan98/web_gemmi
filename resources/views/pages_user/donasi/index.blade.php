@@ -89,7 +89,9 @@
                                                                             @endif
                                                                         @endif
                                                                     @endif
-                                                                    <a class="btn btn-outline-secondary" href="{{ route('donasi.cetak', $d->id) }}">Cetak</a>
+                                                                    @if($d->user_id == auth()->user()->id)
+                                                                        <a class="btn btn-outline-secondary" href="{{ route('donasi.cetak', $d->id) }}">Cetak</a>
+                                                                    @endif
                                                                 </div>
                                                             </td>
                                                         </tr>
