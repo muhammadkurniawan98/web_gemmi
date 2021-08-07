@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be143e53-fe73-412b-b5b5-7e0300e136b8" name="Default Changelist" comment="version-1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jumlah_donasi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jumlah_donasi.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jumlah_donatur.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jumlah_donatur.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jumlah_tamu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jumlah_tamu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/iAm67MBJLflQFH2Gz9IZtgCF8Ligiped86Y8jQzW" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

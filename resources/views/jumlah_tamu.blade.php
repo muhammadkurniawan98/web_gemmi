@@ -29,7 +29,7 @@
                             </div>
                             <div class="card-body border-0">
                                 <div class="row">
-                                    <div class="col-md-5">
+                                    <div class="col-md-8">
                                         <p>Jumlah tamu yang berkunjung hingga hari ini adalah {{ $jumlah }} <a href="{{ route('tamu.index') }}">orang</a>.</p>
                                     </div>
                                 </div>

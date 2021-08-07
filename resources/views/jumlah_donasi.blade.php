@@ -29,7 +29,7 @@
                             </div>
                             <div class="card-body border-0">
                                 <div class="row">
-                                    <div class="col-md-5">
+                                    <div class="col-md-8">
                                         <p>Jumlah donasi yang terkumpul hingga hari ini adalah {{ $jumlah }} <a href="{{ route('donasi.index') }}">donasi</a>.</p>
                                     </div>
                                 </div>

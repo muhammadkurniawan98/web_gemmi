@@ -27,7 +27,7 @@
                             </div>
                             <div class="card-body border-0">
                                 <div class="row">
-                                    <div class="col-md-5">
+                                    <div class="col-md-8">
                                         <p>Jumlah donasi yang terkumpul hingga hari ini adalah <?php echo e($jumlah); ?> <a href="<?php echo e(route('donasi.index')); ?>">donasi</a>.</p>
                                     </div>
                                 </div>
