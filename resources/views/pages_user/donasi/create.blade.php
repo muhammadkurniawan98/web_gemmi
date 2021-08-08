@@ -214,9 +214,9 @@
                                 </script>
                                 @else
                                     @if(!$status_tamu)
-                                        <label>Anda harus mengisi <a>buku tamu</a> terlebih dahulu.</label>
+                                        <label>Anda harus mengisi <a href="{{ route('tamu.create') }}">buku tamu</a> terlebih dahulu.</label>
                                     @else
-                                        <label>Anda harus terdaftar sebagai <a>donatur</a> terlebih dahulu.</label>
+                                        <label>Anda harus terdaftar sebagai <a href="{{ route('donatur.create') }}">donatur</a> terlebih dahulu.</label>
                                     @endif
                                 @endif
                             </div>

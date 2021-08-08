@@ -311,9 +311,9 @@ unset($__errorArgs, $__bag); ?>
                                 </script>
                                 <?php else: ?>
                                     <?php if(!$status_tamu): ?>
-                                        <label>Anda harus mengisi <a>buku tamu</a> terlebih dahulu.</label>
+                                        <label>Anda harus mengisi <a href="<?php echo e(route('tamu.create')); ?>">buku tamu</a> terlebih dahulu.</label>
                                     <?php else: ?>
-                                        <label>Anda harus terdaftar sebagai <a>donatur</a> terlebih dahulu.</label>
+                                        <label>Anda harus terdaftar sebagai <a href="<?php echo e(route('donatur.create')); ?>">donatur</a> terlebih dahulu.</label>
                                     <?php endif; ?>
                                 <?php endif; ?>
                             </div>
