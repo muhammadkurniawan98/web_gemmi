@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be143e53-fe73-412b-b5b5-7e0300e136b8" name="Default Changelist" comment="version-1">
+      <change afterPath="$PROJECT_DIR$/public/bg_laporan_file/background2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/bg_laporan_file/background3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/laporan_donasi_semua.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/laporan_donasi_user.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/BGPy4ERGSwhdFwt2I4CIxrH1w322Rd7IMlKVyIWO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/58c9c3e8e4b85f6884a63ae3f21660cd5810a1cb.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/6642f2cfe2f7e9ee12e8c8f05ebda0f8e872a72b.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DonasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DonasiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2faf69c4-f6a5-11eb-a980-0cc47a792c0a_id_2faf69c4-f6a5-11eb-a980-0cc47a792c0a_files/background1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/bg_laporan_file/background1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/laporan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/laporan.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/donasi_user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/donasi_user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages_user/donasi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages_user/donasi/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/05Kd85wLLLSryjM7oM9nhG79vXX28SX3Xj3gJWkm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/9V9AX2h2CNdDWWFv8vpsDBHxjxDs5JAC05Nj2iI7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/LEICHQE7cfnWn9Lqe04zaK1acF4CAPewRXWWhZw5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/02a79111ff1e653e6fee9a7367dd14deaa9fc811.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/02a79111ff1e653e6fee9a7367dd14deaa9fc811.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/0b1f65e986574fd02f216e60346c5ad46b970b57.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0b1f65e986574fd02f216e60346c5ad46b970b57.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,18 +181,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../template" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/rekap donasi keseluruhan (1) (2).html" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project_website\github\backup\web_gemmi\public\bg_laporan_file" />
       <recent name="D:\project_website\github\backup\web_gemmi\resources\views" />
       <recent name="D:\project_website\laravel_8\web_gemmi\template_argon" />
       <recent name="D:\project_website\laravel_8\web_gemmi\public\assets\js" />
       <recent name="D:\project_website\laravel_8\web_gemmi\public\assets\css" />
-      <recent name="D:\project_website\laravel_8\web_gemmi\public\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project_website\github\backup\web_gemmi\public" />
@@ -239,7 +257,9 @@
       <workItem from="1628244212255" duration="24758000" />
       <workItem from="1628324642580" duration="2965000" />
       <workItem from="1628329753312" duration="627000" />
-      <workItem from="1628418848994" duration="297000" />
+      <workItem from="1628418848994" duration="509000" />
+      <workItem from="1628437443255" duration="4700000" />
+      <workItem from="1628464422630" duration="16830000" />
     </task>
     <servers />
   </component>

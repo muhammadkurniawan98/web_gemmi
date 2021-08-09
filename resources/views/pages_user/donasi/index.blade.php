@@ -55,6 +55,16 @@
                                             </div>
                                         </form>
                                     </div>
+                                    @if(auth()->check())
+                                        @if(auth()->user()->admin)
+                                            <div class="col-md-5">
+                                                <p class="text-right">Rekapitulasi semua donasi</p>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a class="btn btn-primary" href="{{ route('rekap.semua') }}">Download</a>
+                                            </div>
+                                        @endif
+                                    @endif
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">

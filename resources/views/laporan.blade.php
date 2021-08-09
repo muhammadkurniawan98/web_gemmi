@@ -10,12 +10,11 @@ span.cls_004{font-family:Arial,serif;font-size:14.0px;color:rgb(0,0,0);font-weig
 div.cls_004{font-family:Arial,serif;font-size:14.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
 -->
 </style>
-<script type="text/javascript" src="2faf69c4-f6a5-11eb-a980-0cc47a792c0a_id_2faf69c4-f6a5-11eb-a980-0cc47a792c0a_files/wz_jsgraphics.js"></script>
 </head>
 <body>
 <div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="2faf69c4-f6a5-11eb-a980-0cc47a792c0a_id_2faf69c4-f6a5-11eb-a980-0cc47a792c0a_files/background1.jpg" width=612 height=792></div>
+<img src="bg_laporan_file/background1.jpg" width=612 height=792></div>
 <div style="position:absolute;left:210.79px;top:34.34px" class="cls_002"><span class="cls_002">TAMAN BACA MASYARAKAT</span></div>
 <div style="position:absolute;left:181.99px;top:58.58px" class="cls_002"><span class="cls_002">GENERASI MARGA MULYA INOVATIF</span></div>
 <div style="position:absolute;left:94.58px;top:83.06px" class="cls_003"><span class="cls_003">Jalan Teuku Umar Dusun II Desa Marga Mulya Kec. Bumi Agung Kab. Lampung Timur</span></div>

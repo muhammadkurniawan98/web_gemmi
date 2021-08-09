@@ -143,4 +143,17 @@ class DonasiController extends Controller
         $pdf = PDF::loadView('laporan', $donasi);
         return $pdf->download('laporan_serah_terima_donasi.pdf');
     }
+
+//    public function cetak_rekap_semua(){
+//        $donasi = Donasi::all();
+//        $pdf = PDF::loadView('laporan_donasi_semua', ['donasi' => $donasi]);
+//        return $pdf->download('rekapitulasi_donasi.pdf');
+//    }
+
+    public function cetak_rekap_user(){
+        $donasi = auth()->user()->Donasi->all();
+        $pdf = PDF::loadView('laporan_donasi_user', ['donasi' => $donasi]);
+        return $pdf->download('rekapitulasi_donasi.pdf');
+    }
+
 }

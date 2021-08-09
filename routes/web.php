@@ -56,6 +56,17 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/jumlah-donasi', function (){
         return view('jumlah_donasi', ['jumlah' => count(\App\Models\Donasi::all())]);
     })->name('jumlah.donasi');
+
+//    Route::get('/cetak-rekap-semua', [DonasiController::class, 'cetak_rekap_semua'])->name('rekap.semua');
+    Route::get('/cetak-rekap-semua', function (){
+        $donasi = \App\Models\Donasi::all();
+        $pdf = PDF::loadView('laporan_donasi_semua', ['donasi' => $donasi]);
+        return $pdf->download('rekapitulasi_donasi.pdf');
+    })->name('rekap.semua');
+
+
+
+    Route::get('/cetak-rekap-user', [DonasiController::class, 'cetak_rekap_user'])->name('rekap.user');
 });
 
 

@@ -41,7 +41,7 @@
                                 @endif
                             </div>
                             <div class="card-body border-0">
-                                <div class="row">
+                                <div class="row justify-content-between">
                                     <div class="col-md-5">
                                         <form action="{{route('donasi.cari')}}" method="POST">
                                             @csrf
@@ -50,6 +50,12 @@
                                                 <input class="btn btn-primary" type="submit" value="cari">
                                             </div>
                                         </form>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <p class="text-right">Rekapitulasi donasi anda</p>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a class="btn btn-primary" href="{{ route('rekap.user') }}">Download</a>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">

@@ -54,6 +54,16 @@
                                             </div>
                                         </form>
                                     </div>
+                                    <?php if(auth()->check()): ?>
+                                        <?php if(auth()->user()->admin): ?>
+                                            <div class="col-md-5">
+                                                <p class="text-right">Rekapitulasi semua donasi</p>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a class="btn btn-primary" href="<?php echo e(route('rekap.semua')); ?>">Download</a>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
