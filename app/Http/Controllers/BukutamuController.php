@@ -66,7 +66,9 @@ class BukutamuController extends Controller
         return view('pages_user.buku_tamu.edit', $data);
     }
     public function update(Request $request, $id){
-        BukuTamu::update($id, $request->all());
+        $buku_tamu = BukuTamu::find($id);
+
+        $buku_tamu->update($request->all());
 
         return redirect(route('tamu.index'))->with('success', 'Edit buku tamu sukses');
     }
