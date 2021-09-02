@@ -23,7 +23,11 @@
 
                 <div class="row justify-content-center">
                     <div class="col-md-12">
-
+                        @if(Session::has('success'))
+                            <div class="alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
                         <div class="card border-0">
                             <div class="card-header border-0">
                                 @if(auth()->check())
@@ -62,6 +66,7 @@
                                                 <th>NAMA</th>
                                                 <th>ALAMAT</th>
                                                 <th>TANGGAL</th>
+                                                <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -73,6 +78,13 @@
                                                             <td>{{$b->nama}}</td>
                                                             <td>{{$b->alamat}}</td>
                                                             <td>{{$b->tanggal}}</td>
+                                                            <td>
+                                                                @if(auth()->check())
+                                                                    @if(auth()->user()->admin)
+                                                                        <a class="btn btn-warning" href="{{ route('tamu.edit', $b->id) }}">Edit</a>
+                                                                    @endif
+                                                                @endif
+                                                            </td>
                                                         </tr>
                                                     @endforeach
                                                 @else

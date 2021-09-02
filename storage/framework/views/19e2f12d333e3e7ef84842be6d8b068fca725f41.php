@@ -21,7 +21,12 @@
 
                 <div class="row justify-content-center">
                     <div class="col-md-12">
+                        <?php if(Session::has('success')): ?>
+                            <div class="alert-success">
+                                <?php echo e(Session::get('success')); ?>
 
+                            </div>
+                        <?php endif; ?>
                         <div class="card border-0">
                             <div class="card-header border-0">
                                 <?php if(auth()->check()): ?>
@@ -60,6 +65,7 @@
                                                 <th>NAMA</th>
                                                 <th>ALAMAT</th>
                                                 <th>TANGGAL</th>
+                                                <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -71,6 +77,13 @@
                                                             <td><?php echo e($b->nama); ?></td>
                                                             <td><?php echo e($b->alamat); ?></td>
                                                             <td><?php echo e($b->tanggal); ?></td>
+                                                            <td>
+                                                                <?php if(auth()->check()): ?>
+                                                                    <?php if(auth()->user()->admin): ?>
+                                                                        <a class="btn btn-warning" href="<?php echo e(route('tamu.edit', $b->id)); ?>">Edit</a>
+                                                                    <?php endif; ?>
+                                                                <?php endif; ?>
+                                                            </td>
                                                         </tr>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 <?php else: ?>

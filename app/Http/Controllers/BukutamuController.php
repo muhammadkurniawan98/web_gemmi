@@ -11,7 +11,7 @@ class BukutamuController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['index']);
-        $this->middleware('userfilter')->except(['index', 'search']);
+        $this->middleware('userfilter')->except(['index', 'search', 'edit', 'update']);
     }
 
     public function index()
@@ -58,6 +58,17 @@ class BukutamuController extends Controller
             return redirect()->route('donasi.create');
         }
 
+    }
+    public function edit($id){
+        $data = [
+            'buku_tamu' => BukuTamu::find($id)
+        ];
+        return view('pages_user.buku_tamu.edit', $data);
+    }
+    public function update(Request $request, $id){
+        BukuTamu::update($id, $request->all());
+
+        return redirect(route('tamu.index'))->with('success', 'Edit buku tamu sukses');
     }
     public function search(Request $request){
         $keyword = $request->keyword;
