@@ -89,21 +89,26 @@
                                                             <td><?php echo e($d->tanggal); ?></td>
                                                             <td><?php echo e($d->status); ?></td>
                                                             <td>
-                                                                <div class="portfolio-links">
-                                                                    <?php if($d->user_id == auth()->user()->id): ?>
-                                                                        <a href="<?php echo e(route('donasi.detail', $d->id)); ?>" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
-                                                                    <?php endif; ?>
-                                                                    <?php if(auth()->check()): ?>
+                                                                <?php if(auth()->check()): ?>
+                                                                    <div class="portfolio-links">
                                                                         <?php if(auth()->user()->admin): ?>
-                                                                            <?php if($d->status == 'belum diterima'): ?>
-                                                                                <a class="btn btn-outline-success" href="<?php echo e(route('donasi.terima', $d->id)); ?>">Terima</a>
+                                                                            <a class="btn btn-warning" href="">Edit</a>
+                                                                        <?php endif; ?>
+                                                                        <?php if($d->user_id == auth()->user()->id || auth()->user()->admin): ?>
+                                                                            <a href="<?php echo e(route('donasi.detail', $d->id)); ?>" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
+                                                                        <?php endif; ?>
+                                                                        <?php if(auth()->check()): ?>
+                                                                            <?php if(auth()->user()->admin): ?>
+                                                                                <?php if($d->status == 'belum diterima'): ?>
+                                                                                    <a class="btn btn-outline-success" href="<?php echo e(route('donasi.terima', $d->id)); ?>">Terima</a>
+                                                                                <?php endif; ?>
                                                                             <?php endif; ?>
                                                                         <?php endif; ?>
-                                                                    <?php endif; ?>
-                                                                    <?php if($d->user_id == auth()->user()->id): ?>
-                                                                        <a class="btn btn-outline-secondary" href="<?php echo e(route('donasi.cetak', $d->id)); ?>">Cetak</a>
-                                                                    <?php endif; ?>
-                                                                </div>
+                                                                        <?php if($d->user_id == auth()->user()->id): ?>
+                                                                            <a class="btn btn-outline-secondary" href="<?php echo e(route('donasi.cetak', $d->id)); ?>">Cetak</a>
+                                                                        <?php endif; ?>
+                                                                    </div>
+                                                                <?php endif; ?>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -11,7 +11,7 @@ class DonaturController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['index']);
-        $this->middleware('userfilter')->except(['index', 'search']);
+        $this->middleware('userfilter')->except(['index', 'search', 'edit', 'update']);
     }
 
     public function index()
@@ -47,6 +47,16 @@ class DonaturController extends Controller
         }
 
         return redirect()->route('tamu.create');
+    }
+    public function edit($id){
+        $data = [
+            'donatur' => Donatur::find($id)
+        ];
+
+        return view('pages_user.donatur.edit', $data);
+    }
+    public function update(Request $request, $id){
+        return 'success';
     }
     public function search(Request $request){
         $keyword = $request->keyword;

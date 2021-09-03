@@ -64,6 +64,7 @@
                                                 <th>TELEPON</th>
                                                 <th>PEKERJAAN</th>
                                                 <th>TANGGAL DAFTAR</th>
+                                                <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -78,6 +79,13 @@
                                                             <td>{{$d->no_telepon}}</td>
                                                             <td>{{$d->pekerjaan}}</td>
                                                             <td>{{$d->tanggal}}</td>
+                                                            <td>
+                                                                @if(auth()->check())
+                                                                    @if(auth()->user()->admin)
+                                                                        <a class="btn btn-warning" href="{{ route('donatur.edit', $d->id) }}">Edit</a>
+                                                                    @endif
+                                                                @endif
+                                                            </td>
                                                         </tr>
                                                     @endforeach
                                                 @else

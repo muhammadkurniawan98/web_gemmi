@@ -90,21 +90,26 @@
                                                             <td>{{$d->tanggal}}</td>
                                                             <td>{{$d->status}}</td>
                                                             <td>
-                                                                <div class="portfolio-links">
-                                                                    @if($d->user_id == auth()->user()->id)
-                                                                        <a href="{{ route('donasi.detail', $d->id) }}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
-                                                                    @endif
-                                                                    @if(auth()->check())
+                                                                @if(auth()->check())
+                                                                    <div class="portfolio-links">
                                                                         @if(auth()->user()->admin)
-                                                                            @if($d->status == 'belum diterima')
-                                                                                <a class="btn btn-outline-success" href="{{ route('donasi.terima', $d->id) }}">Terima</a>
+                                                                            <a class="btn btn-warning" href="">Edit</a>
+                                                                        @endif
+                                                                        @if($d->user_id == auth()->user()->id || auth()->user()->admin)
+                                                                            <a href="{{ route('donasi.detail', $d->id) }}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>
+                                                                        @endif
+                                                                        @if(auth()->check())
+                                                                            @if(auth()->user()->admin)
+                                                                                @if($d->status == 'belum diterima')
+                                                                                    <a class="btn btn-outline-success" href="{{ route('donasi.terima', $d->id) }}">Terima</a>
+                                                                                @endif
                                                                             @endif
                                                                         @endif
-                                                                    @endif
-                                                                    @if($d->user_id == auth()->user()->id)
-                                                                        <a class="btn btn-outline-secondary" href="{{ route('donasi.cetak', $d->id) }}">Cetak</a>
-                                                                    @endif
-                                                                </div>
+                                                                        @if($d->user_id == auth()->user()->id)
+                                                                            <a class="btn btn-outline-secondary" href="{{ route('donasi.cetak', $d->id) }}">Cetak</a>
+                                                                        @endif
+                                                                    </div>
+                                                                @endif
                                                             </td>
                                                         </tr>
                                                     @endforeach

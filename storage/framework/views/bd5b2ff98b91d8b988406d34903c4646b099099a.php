@@ -62,6 +62,7 @@
                                                 <th>TELEPON</th>
                                                 <th>PEKERJAAN</th>
                                                 <th>TANGGAL DAFTAR</th>
+                                                <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -76,6 +77,13 @@
                                                             <td><?php echo e($d->no_telepon); ?></td>
                                                             <td><?php echo e($d->pekerjaan); ?></td>
                                                             <td><?php echo e($d->tanggal); ?></td>
+                                                            <td>
+                                                                <?php if(auth()->check()): ?>
+                                                                    <?php if(auth()->user()->admin): ?>
+                                                                        <a class="btn btn-warning" href="<?php echo e(route('donatur.edit', $d->id)); ?>">Edit</a>
+                                                                    <?php endif; ?>
+                                                                <?php endif; ?>
+                                                            </td>
                                                         </tr>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 <?php else: ?>
