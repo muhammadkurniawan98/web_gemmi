@@ -16,10 +16,10 @@
                 <div class="col-lg-4 portfolio-info">
                     <h3>Informasi donasi</h3>
                     <ul>
-                        <li><strong>Nama Donatur</strong>: {{ $donasi->nama_donatur }}</li>
+                        <li><strong>Nama Donatur</strong>: {{ $donasi->User->nama }}</li>
                         <li><strong>Nama Penerima</strong>: {{ $donasi->nama_penerima }}</li>
-                        <li><strong>Alamat</strong>: {{ $donasi->alamat }}</li>
-                        <li><strong>No Telepon</strong>: {{ $donasi->no_telepon }}</li>
+                        <li><strong>Alamat</strong>: {{ $donasi->User->alamat }}</li>
+                        <li><strong>No Telepon</strong>: {{ $donasi->User->no_telepon }}</li>
                         <li><strong>Jenis Donasi</strong>: {{ $donasi->jenis_donasi }}</li>
                         <li><strong>Bentuk Donasi</strong>:
                             @if($donasi->jenis_donasi == 'GNJ')

@@ -32,20 +32,6 @@
                                     @csrf
                                     <input type="hidden" name="_method" value="PUT">
                                     <div class="form-group row">
-                                        <label for="nama" class="col-md-4 col-form-label text-md-right">{{ __('Nama') }}</label>
-
-                                        <div class="col-md-6">
-                                            <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ $donatur->nama }}" placeholder="Nama Lengkap" autofocus>
-
-                                            @error('nama')
-                                            <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
                                         <label for="status" class="col-md-4 col-form-label text-md-right">{{ __('Status') }}</label>
 
                                         <div class="col-md-6">
@@ -83,20 +69,6 @@
                                                     language: 'id',
                                                 });
                                             </script>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="no_telepon" class="col-md-4 col-form-label text-md-right">{{ __('No Telepon') }}</label>
-
-                                        <div class="col-md-6">
-                                            <input id="no_telepon" type="text" class="form-control @error('no_telepon') is-invalid @enderror" name="no_telepon" value="{{ $donatur->no_telepon }}" placeholder="Nomor Telepon/HP" autofocus>
-
-                                            @error('no_telepon')
-                                            <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
                                         </div>
                                     </div>
 

@@ -24,35 +24,6 @@
                                 <?php if($status_tamu && $status_donatur): ?>
                                 <form role="form" method="POST" id="form_donasi" action="<?php echo e(route('donasi.store')); ?>" enctype="multipart/form-data">
                                     <?php echo csrf_field(); ?>
-
-                                    <div class="form-group row">
-                                        <label for="nama_donatur" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Nama Donatur')); ?></label>
-
-                                        <div class="col-md-6">
-                                            <input id="nama_donatur" type="text" class="form-control <?php $__errorArgs = ['nama_donatur'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" name="nama_donatur" value="<?php echo e(old('nama_donatur')); ?>" autofocus>
-
-                                            <?php $__errorArgs = ['nama_donatur'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong><?php echo e($message); ?></strong>
-                                                </span>
-                                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                        </div>
-                                    </div>
-
                                     <div class="form-group row">
                                         <label for="nama_penerima" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Nama Penerima')); ?></label>
 
@@ -80,63 +51,6 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                         </div>
                                     </div>
-
-                                    <div class="form-group row">
-                                        <label for="alamat" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Alamat')); ?></label>
-
-                                        <div class="col-md-6">
-                                            <input id="alamat" type="text" class="form-control <?php $__errorArgs = ['alamat'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" name="alamat" value="<?php echo e(old('alamat')); ?>" autofocus>
-
-                                            <?php $__errorArgs = ['alamat'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong><?php echo e($message); ?></strong>
-                                                </span>
-                                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="no_telepon" class="col-md-4 col-form-label text-md-right"><?php echo e(__('No Telepon')); ?></label>
-
-                                        <div class="col-md-6">
-                                            <input id="no_telepon" type="text" class="form-control <?php $__errorArgs = ['no_telepon'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" name="no_telepon" value="<?php echo e(old('no_telepon')); ?>" autofocus>
-
-                                            <?php $__errorArgs = ['no_telepon'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong><?php echo e($message); ?></strong>
-                                                </span>
-                                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                        </div>
-                                    </div>
-
                                     <div class="form-group row">
                                         <label for="jenis_donasi" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Jenis Donasi')); ?></label>
 

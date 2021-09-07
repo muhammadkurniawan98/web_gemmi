@@ -85,7 +85,7 @@
                                                     @foreach($donasi as $d)
                                                         <tr>
                                                             <td>{{$i++}}</td>
-                                                            <td>{{$d->nama_donatur}}</td>
+                                                            <td>{{$d->User->nama}}</td>
                                                             <td>{{$d->nama_penerima}}</td>
                                                             <td>{{$d->tanggal}}</td>
                                                             <td>{{$d->status}}</td>
@@ -93,7 +93,7 @@
                                                                 @if(auth()->check())
                                                                     <div class="portfolio-links">
                                                                         @if(auth()->user()->admin)
-                                                                            <a class="btn btn-warning" href="">Edit</a>
+                                                                            <a class="btn btn-warning" href="{{ route('donasi.edit', $d->id) }}">Edit</a>
                                                                         @endif
                                                                         @if($d->user_id == auth()->user()->id || auth()->user()->admin)
                                                                             <a href="{{ route('donasi.detail', $d->id) }}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>

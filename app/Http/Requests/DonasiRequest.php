@@ -24,10 +24,7 @@ class DonasiRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama_donatur'  => 'required|string|max:255',
             'nama_penerima' => 'required|string|max:255',
-            'alamat'        => 'required|string|max:255',
-            'no_telepon'    => 'required|regex:/^[0-9]+$/',
             'jenis_donasi'  => 'required|string|max:255',
             'jumlah_donasi'  => 'required|string|max:255',
             'bukti_donasi'  => 'required|mimes:png,jpg,jpeg|max:2048',

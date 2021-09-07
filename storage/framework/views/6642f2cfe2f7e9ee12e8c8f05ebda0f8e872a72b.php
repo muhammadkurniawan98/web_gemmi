@@ -113,8 +113,8 @@
             <tr>
                 <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: center;"><?php echo e($i++); ?></td>
                 <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: center"><?php echo e($d->tanggal); ?></td>
-                <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: left"><?php echo e($d->nama_donatur); ?></td>
-                <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: left"><?php echo e($d->alamat); ?></td>
+                <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: left"><?php echo e($d->User->nama); ?></td>
+                <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: left"><?php echo e($d->User->alamat); ?></td>
                 <?php if($d->jenis_donasi == 'GNJ'): ?>
                     <?php $countGNJ++; ?>
                     <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: center">

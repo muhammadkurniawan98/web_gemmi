@@ -16,27 +16,20 @@ class AllTables extends Migration
         Schema::create('buku_tamu', function (Blueprint $table){
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->string('nama');
-            $table->string('alamat');
             $table->date('tanggal');
         });
         Schema::create('donatur', function (Blueprint $table){
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->string('nama');
             $table->string('status');
             $table->string('ttl');
-            $table->string('no_telepon');
             $table->string('pekerjaan');
             $table->date('tanggal');
         });
         Schema::create('donasi', function (Blueprint $table){
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->string('nama_donatur');
             $table->string('nama_penerima');
-            $table->string('alamat');
-            $table->string('no_telepon');
             $table->string('jenis_donasi');
             $table->string('jumlah_donasi');
             $table->string('bukti_donasi');

@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/donasi/{id}/index', [DonasiController::class, 'userDonation'])->name('donasi.saya');
     Route::get('/donasi/{donasi}/detail', [DonasiController::class, 'detail'])->name('donasi.detail');
     Route::get('/donasi/{donasi}/cetak', [DonasiController::class, 'cetak'])->name('donasi.cetak');
-    Route::get('/donasi/{donasi}/terima', [DonasiController::class, 'update'])->name('donasi.terima');
+    Route::get('/donasi/{donasi}/terima', [DonasiController::class, 'donasiTerima'])->name('donasi.terima');
 
     Route::get('/jumlah-tamu', function (){
         return view('jumlah_tamu', ['jumlah' => count(\App\Models\BukuTamu::all())]);

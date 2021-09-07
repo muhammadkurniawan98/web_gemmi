@@ -73,9 +73,9 @@
         $alamat = '';
         $no_telepon = '';
         foreach ($donasi as $d){
-            $nama_donatur = $d->nama_donatur;
-            $alamat = $d->alamat;
-            $no_telepon = $d->no_telepon;
+            $nama_donatur = $d->User->nama;
+            $alamat = $d->User->alamat;
+            $no_telepon = $d->User->no_telepon;
             break;
         }
         ?>

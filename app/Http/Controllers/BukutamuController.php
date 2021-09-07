@@ -45,8 +45,6 @@ class BukutamuController extends Controller
         if($request->validated()){
             BukuTamu::create([
                 'user_id'           => auth()->user()->id,
-                'nama'              => $request->nama,
-                'alamat'            => $request->alamat,
                 'tanggal'           => $request->tanggal,
             ]);
         }
@@ -78,9 +76,12 @@ class BukutamuController extends Controller
             return redirect(route('tamu.index'));
         }
         else{
-            $bukuTamu = BukuTamu::where('nama', 'like','%'.$keyword.'%')
-                ->orWhere('alamat', 'like', '%'.$keyword.'%')
-                ->orWhere('tanggal', 'like', '%'.$keyword.'%')
+            $bukuTamu = BukuTamu::leftJoin('users', 'users.id', '=', 'buku_tamu.user_id')
+                ->where('users.admin', '=',false)
+                ->where('users.nama', 'like','%'.$keyword.'%')
+                ->orWhere('users.alamat', 'like', '%'.$keyword.'%')
+                ->orWhere('buku_tamu.tanggal', 'like', '%'.$keyword.'%')
+                ->select('buku_tamu.id', 'buku_tamu.user_id', 'buku_tamu.tanggal')
                 ->paginate(10);
             return view('pages_user.buku_tamu.index')->with('buku_tamu', $bukuTamu);
         }

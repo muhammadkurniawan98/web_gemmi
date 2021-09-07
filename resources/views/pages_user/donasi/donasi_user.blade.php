@@ -77,7 +77,7 @@
                                                     @foreach($donasi as $d)
                                                         <tr>
                                                             <td>{{$i++}}</td>
-                                                            <td>{{$d->nama_donatur}}</td>
+                                                            <td>{{$d->User->nama}}</td>
                                                             <td>{{$d->nama_penerima}}</td>
                                                             <td>{{$d->tanggal}}</td>
                                                             <td>{{$d->status}}</td>

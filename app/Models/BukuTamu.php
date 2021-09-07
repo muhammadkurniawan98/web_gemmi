@@ -13,8 +13,6 @@ class BukuTamu extends Model
 
     protected $fillable = [
         'user_id',
-        'nama',
-        'alamat',
         'tanggal',
     ];
 

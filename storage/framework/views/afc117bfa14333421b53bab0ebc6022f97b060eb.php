@@ -14,10 +14,10 @@
                 <div class="col-lg-4 portfolio-info">
                     <h3>Informasi donasi</h3>
                     <ul>
-                        <li><strong>Nama Donatur</strong>: <?php echo e($donasi->nama_donatur); ?></li>
+                        <li><strong>Nama Donatur</strong>: <?php echo e($donasi->User->nama); ?></li>
                         <li><strong>Nama Penerima</strong>: <?php echo e($donasi->nama_penerima); ?></li>
-                        <li><strong>Alamat</strong>: <?php echo e($donasi->alamat); ?></li>
-                        <li><strong>No Telepon</strong>: <?php echo e($donasi->no_telepon); ?></li>
+                        <li><strong>Alamat</strong>: <?php echo e($donasi->User->alamat); ?></li>
+                        <li><strong>No Telepon</strong>: <?php echo e($donasi->User->no_telepon); ?></li>
                         <li><strong>Jenis Donasi</strong>: <?php echo e($donasi->jenis_donasi); ?></li>
                         <li><strong>Bentuk Donasi</strong>:
                             <?php if($donasi->jenis_donasi == 'GNJ'): ?>

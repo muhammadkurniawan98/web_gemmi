@@ -24,10 +24,8 @@ class BukuTamuRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama'              => 'required|string|max:255',
-            'alamat'            => 'required|string|max:255',
             'tanggal'           => 'required|date_format:Y-m-d',
-            'kepentingan'           => 'string',
+            'kepentingan'       => 'string',
         ];
     }
 }

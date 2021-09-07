@@ -22,7 +22,11 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-12">
-
+                        @if(Session::has('success'))
+                            <div class="alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
                         <div class="card border-0">
                             <div class="card-header border-0">
                                 @if(auth()->check())
@@ -73,10 +77,10 @@
                                                     @foreach($donatur as $d)
                                                         <tr>
                                                             <td>{{$i++}}</td>
-                                                            <td>{{$d->nama}}</td>
+                                                            <td>{{$d->User->nama}}</td>
                                                             <td>{{$d->status}}</td>
                                                             <td>{{$d->ttl}}</td>
-                                                            <td>{{$d->no_telepon}}</td>
+                                                            <td>{{$d->User->no_telepon}}</td>
                                                             <td>{{$d->pekerjaan}}</td>
                                                             <td>{{$d->tanggal}}</td>
                                                             <td>

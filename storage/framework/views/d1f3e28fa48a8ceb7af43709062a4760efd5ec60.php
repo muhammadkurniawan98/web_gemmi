@@ -18,6 +18,12 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10">
+                    <?php if(Session::has('error')): ?>
+                        <div class="alert-danger">
+                            <?php echo e(Session::get('error')); ?>
+
+                        </div>
+                    <?php endif; ?>
                     <div class="card">
 
                         <div class="card-body">
@@ -89,6 +95,35 @@ unset($__errorArgs, $__bag); ?>
                                             <option>laki-laki</option>
                                             <option>perempuan</option>
                                         </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="no_telepon" class="col-md-4 col-form-label text-md-right"><?php echo e(__('No Telepon')); ?></label>
+
+                                    <div class="col-md-6">
+                                        <input id="no_telepon" type="text" class="form-control <?php $__errorArgs = ['no_telepon'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" name="no_telepon" value="<?php echo e(old('no_telepon')); ?>" placeholder="" autofocus>
+
+                                        <?php $__errorArgs = ['no_telepon'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                        <span class="invalid-feedback" role="alert">
+                                                <strong><?php echo e($message); ?></strong>
+                                            </span>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                     </div>
 
                                 </div>

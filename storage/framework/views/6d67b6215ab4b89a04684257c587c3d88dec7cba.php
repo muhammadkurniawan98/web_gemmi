@@ -30,34 +30,6 @@
                                     <?php echo csrf_field(); ?>
                                     <input type="hidden" name="_method" value="PUT">
                                     <div class="form-group row">
-                                        <label for="nama" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Nama')); ?></label>
-
-                                        <div class="col-md-6">
-                                            <input id="nama" type="text" class="form-control <?php $__errorArgs = ['nama'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" name="nama" value="<?php echo e($donatur->nama); ?>" placeholder="Nama Lengkap" autofocus>
-
-                                            <?php $__errorArgs = ['nama'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                            <span class="invalid-feedback" role="alert">
-                                                    <strong><?php echo e($message); ?></strong>
-                                                </span>
-                                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
                                         <label for="status" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Status')); ?></label>
 
                                         <div class="col-md-6">
@@ -137,34 +109,6 @@ unset($__errorArgs, $__bag); ?>
                                                     language: 'id',
                                                 });
                                             </script>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="no_telepon" class="col-md-4 col-form-label text-md-right"><?php echo e(__('No Telepon')); ?></label>
-
-                                        <div class="col-md-6">
-                                            <input id="no_telepon" type="text" class="form-control <?php $__errorArgs = ['no_telepon'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" name="no_telepon" value="<?php echo e($donatur->no_telepon); ?>" placeholder="Nomor Telepon/HP" autofocus>
-
-                                            <?php $__errorArgs = ['no_telepon'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                            <span class="invalid-feedback" role="alert">
-                                                    <strong><?php echo e($message); ?></strong>
-                                                </span>
-                                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
                                         </div>
                                     </div>
 

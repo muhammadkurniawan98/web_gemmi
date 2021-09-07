@@ -113,8 +113,8 @@
             <tr>
                 <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: center;">{{ $i++ }}</td>
                 <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: center">{{ $d->tanggal }}</td>
-                <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: left">{{ $d->nama_donatur }}</td>
-                <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: left">{{ $d->alamat }}</td>
+                <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: left">{{ $d->User->nama }}</td>
+                <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: left">{{ $d->User->alamat }}</td>
                 @if($d->jenis_donasi == 'GNJ')
                     <?php $countGNJ++; ?>
                     <td style="border: #000000 1px solid; padding: 0 !important; margin: 0 !important; text-align: center">

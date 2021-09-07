@@ -20,7 +20,12 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-12">
+                        <?php if(Session::has('success')): ?>
+                            <div class="alert-success">
+                                <?php echo e(Session::get('success')); ?>
 
+                            </div>
+                        <?php endif; ?>
                         <div class="card border-0">
                             <div class="card-header border-0">
                                 <?php if(auth()->check()): ?>
@@ -71,10 +76,10 @@
                                                     <?php $__currentLoopData = $donatur; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                         <tr>
                                                             <td><?php echo e($i++); ?></td>
-                                                            <td><?php echo e($d->nama); ?></td>
+                                                            <td><?php echo e($d->User->nama); ?></td>
                                                             <td><?php echo e($d->status); ?></td>
                                                             <td><?php echo e($d->ttl); ?></td>
-                                                            <td><?php echo e($d->no_telepon); ?></td>
+                                                            <td><?php echo e($d->User->no_telepon); ?></td>
                                                             <td><?php echo e($d->pekerjaan); ?></td>
                                                             <td><?php echo e($d->tanggal); ?></td>
                                                             <td>

@@ -21,7 +21,7 @@ class DonasiController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['index']);
-        $this->middleware('userfilter')->except(['index', 'search', 'detail', 'cetak', 'update']);
+        $this->middleware('userfilter')->except(['index', 'search', 'detail', 'cetak', 'edit', 'update', 'donasiTerima']);
     }
 
     public function index()
@@ -39,6 +39,8 @@ class DonasiController extends Controller
 
     public function create()
     {
+        date_default_timezone_set('Asia/Jakarta');
+
         $id = auth()->user()->id;
 
         $tanggal = date('Y-m-d');
@@ -67,10 +69,7 @@ class DonasiController extends Controller
 
             $donasi = new Donasi();
             $donasi->user_id = auth()->user()->id;
-            $donasi->nama_donatur = $request->nama_donatur;
             $donasi->nama_penerima = $request->nama_penerima;
-            $donasi->alamat = $request->alamat;
-            $donasi->no_telepon = $request->no_telepon;
             $donasi->jenis_donasi = $request->jenis_donasi;
             $donasi->jumlah_donasi = $request->jumlah_donasi.' '.$request->format_jumlah;
             $donasi->bukti_donasi = $newFilename;
@@ -111,26 +110,42 @@ class DonasiController extends Controller
 
         return redirect()->route('donasi.index')->with('success', 'Donasi berhasil dikirim. Terima kasih telah berdonasi.');
     }
+    public function edit($id){
+        $data = [
+            'donasi' => Donasi::find($id),
+        ];
 
+        return view('pages_user.donasi.edit', $data);
+    }
+    public function update(Request $request, $id){
+        $donasi = Donasi::find($id);
+        $donasi->update([
+            'jumlah_donasi' => $request->jumlah_donasi.' '.$request->format_jumlah
+        ]);
+        return redirect(route('donasi.index'))->with('success', 'Donasi berhasil diedit');
+    }
     public function search(Request $request){
         $keyword = $request->keyword;
         if(trim($keyword) == ''){
             return redirect(route('donasi.index'));
         }
         else{
-            $donasi = Donasi::where('nama_donatur', 'like', '%'.$keyword.'%')
-                            ->orWhere('nama_penerima', 'like', '%'.$keyword.'%')
-                            ->orWhere('alamat', 'like', '%'.$keyword.'%')
-                            ->orWhere('no_telepon', 'like', '%'.$keyword.'%')
-                            ->orWhere('jenis_donasi', 'like', '%'.$keyword.'%')
-                            ->orWhere('bukti_donasi', 'like', '%'.$keyword.'%')
-                            ->orWhere('tanggal', 'like', '%'.$keyword.'%')
+            $donasi = Donasi::leftJoin('users', 'users.id', '=', 'donasi.user_id')
+                            ->where('users.admin', '=', false)
+                            ->where('users.nama', 'like', '%'.$keyword.'%')
+                            ->orWhere('donasi.nama_penerima', 'like', '%'.$keyword.'%')
+                            ->orWhere('users.alamat', 'like', '%'.$keyword.'%')
+                            ->orWhere('users.no_telepon', 'like', '%'.$keyword.'%')
+                            ->orWhere('donasi.jenis_donasi', 'like', '%'.$keyword.'%')
+                            ->orWhere('donasi.bukti_donasi', 'like', '%'.$keyword.'%')
+                            ->orWhere('donasi.tanggal', 'like', '%'.$keyword.'%')
+                            ->select('donasi.id', 'donasi.nama_penerima', 'donasi.tanggal', 'donasi.status', 'donasi.user_id')
                             ->paginate(10);
             return view('pages_user.donasi.index')->with('donasi', $donasi);
         }
     }
 
-    public function update(Donasi $donasi){
+    public function donasiTerima(Donasi $donasi){
         $donasi->update(['status' => 'sudah diterima']);
         return redirect(route('donasi.index'))->with('success', 'Donasi sudah diterima');
     }
@@ -140,15 +155,15 @@ class DonasiController extends Controller
     }
 
     public function cetak(Donasi $donasi){
-        $pdf = PDF::loadView('laporan', $donasi);
+        $pdf = PDF::loadView('laporan', ['donasi' => $donasi]);
         return $pdf->download('laporan_serah_terima_donasi.pdf');
     }
 
-//    public function cetak_rekap_semua(){
-//        $donasi = Donasi::all();
-//        $pdf = PDF::loadView('laporan_donasi_semua', ['donasi' => $donasi]);
-//        return $pdf->download('rekapitulasi_donasi.pdf');
-//    }
+    public function cetak_rekap_semua(){
+        $donasi = Donasi::all();
+        $pdf = PDF::loadView('laporan_donasi_semua', ['donasi' => $donasi]);
+        return $pdf->download('rekapitulasi_donasi.pdf');
+    }
 
     public function cetak_rekap_user(){
         $donasi = auth()->user()->Donasi->all();

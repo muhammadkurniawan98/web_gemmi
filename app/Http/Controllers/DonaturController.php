@@ -37,10 +37,8 @@ class DonaturController extends Controller
         if($request->validated()){
             Donatur::create([
                 'user_id'    => auth()->user()->id,
-                'nama'       => $request->nama,
                 'status'     => $request->status,
                 'ttl'        => $request->tempat_lahir.', '.$request->tanggal_lahir,
-                'no_telepon' => $request->no_telepon,
                 'pekerjaan'  => $request->pekerjaan,
                 'tanggal'    => $request->tanggal,
             ]);
@@ -56,7 +54,14 @@ class DonaturController extends Controller
         return view('pages_user.donatur.edit', $data);
     }
     public function update(Request $request, $id){
-        return 'success';
+        $donatur = Donatur::find($id);
+        $donatur->update([
+            'status' => $request->status,
+            'ttl' => $request->tempat_lahir.', '.$request->tanggal_lahir,
+            'pekerjaan' => $request->pekerjaan,
+            'tanggal' => $request->tanggal
+        ]);
+        return redirect(route('donatur.index'))->with('success', 'Donatur berhasil diedit');
     }
     public function search(Request $request){
         $keyword = $request->keyword;
@@ -64,12 +69,15 @@ class DonaturController extends Controller
             return redirect(route('donatur.index'));
         }
         else{
-            $donatur = Donatur::where('nama', 'like', '%'.$keyword.'%')
-                ->orWhere('status','like', '%'.$keyword.'%')
-                ->orWhere('ttl', 'like', '%'.$keyword.'%')
-                ->orWhere('no_telepon', 'like', '%'.$keyword.'%')
-                ->orWhere('pekerjaan', 'like', '%'.$keyword.'%')
-                ->orWhere('tanggal', 'like', '%'.$keyword.'%')
+            $donatur = Donatur::leftJoin('users', 'users.id', '=', 'donatur.user_id')
+                ->where('users.admin', '=',false)
+                ->where('users.nama', 'like', '%'.$keyword.'%')
+                ->orWhere('donatur.status','like', '%'.$keyword.'%')
+                ->orWhere('donatur.ttl', 'like', '%'.$keyword.'%')
+                ->orWhere('users.no_telepon', 'like', '%'.$keyword.'%')
+                ->orWhere('donatur.pekerjaan', 'like', '%'.$keyword.'%')
+                ->orWhere('donatur.tanggal', 'like', '%'.$keyword.'%')
+                ->select('donatur.id', 'donatur.status', 'donatur.ttl', 'donatur.pekerjaan', 'donatur.tanggal', 'donatur.user_id')
                 ->paginate(10);
             return view('pages_user.donatur.index')->with('donatur', $donatur);
         }

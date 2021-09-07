@@ -84,7 +84,7 @@
                                                     <?php $__currentLoopData = $donasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                         <tr>
                                                             <td><?php echo e($i++); ?></td>
-                                                            <td><?php echo e($d->nama_donatur); ?></td>
+                                                            <td><?php echo e($d->User->nama); ?></td>
                                                             <td><?php echo e($d->nama_penerima); ?></td>
                                                             <td><?php echo e($d->tanggal); ?></td>
                                                             <td><?php echo e($d->status); ?></td>
@@ -92,7 +92,7 @@
                                                                 <?php if(auth()->check()): ?>
                                                                     <div class="portfolio-links">
                                                                         <?php if(auth()->user()->admin): ?>
-                                                                            <a class="btn btn-warning" href="">Edit</a>
+                                                                            <a class="btn btn-warning" href="<?php echo e(route('donasi.edit', $d->id)); ?>">Edit</a>
                                                                         <?php endif; ?>
                                                                         <?php if($d->user_id == auth()->user()->id || auth()->user()->admin): ?>
                                                                             <a href="<?php echo e(route('donasi.detail', $d->id)); ?>" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox btn btn-outline-primary" title="Donasi Detail">Detail</a>

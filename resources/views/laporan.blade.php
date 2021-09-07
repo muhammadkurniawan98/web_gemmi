@@ -29,22 +29,22 @@ div.cls_004{font-family:Arial,serif;font-size:14.0px;color:rgb(0,0,0);font-weigh
 <div style="position:absolute;left:219.19px;top:293.14px" class="cls_003"><span class="cls_003">: ………………………………………………………</span></div>
 <div style="position:absolute;left:72.02px;top:320.26px" class="cls_003"><span class="cls_003">Dengan ini menyatakan bahwa :</span></div>
 <div style="position:absolute;left:142.85px;top:347.14px" class="cls_003"><span class="cls_003">Nama Donatur</span></div>
-<div style="position:absolute;left:252.10px;top:347.14px" class="cls_003"><span class="cls_003">: {{ $nama_donatur }}</span></div>
+<div style="position:absolute;left:252.10px;top:347.14px" class="cls_003"><span class="cls_003">: {{ $donasi->User->nama }}</span></div>
 <div style="position:absolute;left:142.85px;top:374.04px" class="cls_003"><span class="cls_003">Alamat</span></div>
-<div style="position:absolute;left:252.10px;top:374.04px" class="cls_003"><span class="cls_003">: {{ $alamat }}</span></div>
+<div style="position:absolute;left:252.10px;top:374.04px" class="cls_003"><span class="cls_003">: {{ $donasi->User->alamat }}</span></div>
 <div style="position:absolute;left:142.85px;top:401.16px" class="cls_003"><span class="cls_003">Tanggal</span></div>
-<div style="position:absolute;left:252.10px;top:401.16px" class="cls_003"><span class="cls_003">: {{ implode('-',array_reverse(explode('-', $tanggal))) }}</span></div>
+<div style="position:absolute;left:252.10px;top:401.16px" class="cls_003"><span class="cls_003">: {{ implode('-',array_reverse(explode('-', $donasi->tanggal))) }}</span></div>
 <div style="position:absolute;left:142.85px;top:428.04px" class="cls_003"><span class="cls_003">No Telpon</span></div>
-<div style="position:absolute;left:252.10px;top:428.04px" class="cls_003"><span class="cls_003">: {{ $no_telepon }}</span></div>
+<div style="position:absolute;left:252.10px;top:428.04px" class="cls_003"><span class="cls_003">: {{ $donasi->User->no_telepon }}</span></div>
 <div style="position:absolute;left:142.85px;top:455.18px" class="cls_003"><span class="cls_003">Jenis Donasi</span></div>
-<div style="position:absolute;left:252.10px;top:455.18px" class="cls_003"><span class="cls_003">: {{ $jenis_donasi }}</span></div>
+<div style="position:absolute;left:252.10px;top:455.18px" class="cls_003"><span class="cls_003">: {{ $donasi->jenis_donasi }}</span></div>
 <div style="position:absolute;left:142.85px;top:482.06px" class="cls_003"><span class="cls_003">Jumlah/Pack</span></div>
-<div style="position:absolute;left:252.10px;top:482.06px" class="cls_003"><span class="cls_003">: {{ $jumlah_donasi }}</span></div>
+<div style="position:absolute;left:252.10px;top:482.06px" class="cls_003"><span class="cls_003">: {{ $donasi->jumlah_donasi }}</span></div>
 <div style="position:absolute;left:72.02px;top:508.94px" class="cls_003"><span class="cls_003">Demikian tanda bukti serah terima donasi in dibuat</span></div>
 <div style="position:absolute;left:108.05px;top:590.09px" class="cls_003"><span class="cls_003">Atas nama donator</span></div>
 <div style="position:absolute;left:402.38px;top:590.09px" class="cls_003"><span class="cls_003">Penerima donasi</span></div>
-<div style="position:absolute;left:108.05px;top:643.87px" class="cls_003"><span class="cls_003">{{ $nama_donatur }}</span></div>
-<div style="position:absolute;left:396.14px;top:643.87px" class="cls_003"><span class="cls_003">{{ $nama_penerima }}</span></div>
+<div style="position:absolute;left:108.05px;top:643.87px" class="cls_003"><span class="cls_003">{{ $donasi->User->nama }}</span></div>
+<div style="position:absolute;left:396.14px;top:643.87px" class="cls_003"><span class="cls_003">{{ $donasi->nama_penerima }}</span></div>
 </div>
 
 </body>

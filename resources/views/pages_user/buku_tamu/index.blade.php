@@ -3,24 +3,19 @@
 @section('content')
 
     <main id="main">
-
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
-
                 <div class="d-flex justify-content-between">
                     <h3>DAFTAR TAMU HARI INI</h3>
                     <ol>
                         <li><a href="/">Kembali ke beranda</a></li>
                     </ol>
                 </div>
-
             </div>
         </section>
 
         <section id="service" class="services">
-
             <div class="container">
-
                 <div class="row justify-content-center">
                     <div class="col-md-12">
                         @if(Session::has('success'))
@@ -75,13 +70,13 @@
                                                     @foreach($buku_tamu as $b)
                                                         <tr>
                                                             <td>{{$i++}}</td>
-                                                            <td>{{$b->nama}}</td>
-                                                            <td>{{$b->alamat}}</td>
+                                                            <td>{{$b->User->nama}}</td>
+                                                            <td>{{$b->User->alamat}}</td>
                                                             <td>{{$b->tanggal}}</td>
                                                             <td>
                                                                 @if(auth()->check())
                                                                     @if(auth()->user()->admin)
-                                                                        <a class="btn btn-warning" href="{{ route('tamu.edit', $b->id) }}">Edit</a>
+                                                                        <a class="btn btn-warning" href="{{ route('tamu.edit', $b) }}">Edit</a>
                                                                     @endif
                                                                 @endif
                                                             </td>
@@ -98,18 +93,14 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="card-footer border-0">
                                 {{$buku_tamu->links('pagination::bootstrap-4')}}
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </section>
-
     </main>
 
 @endsection

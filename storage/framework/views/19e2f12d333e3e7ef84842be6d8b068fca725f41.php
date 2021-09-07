@@ -1,24 +1,19 @@
 <?php $__env->startSection('content'); ?>
 
     <main id="main">
-
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
-
                 <div class="d-flex justify-content-between">
                     <h3>DAFTAR TAMU HARI INI</h3>
                     <ol>
                         <li><a href="/">Kembali ke beranda</a></li>
                     </ol>
                 </div>
-
             </div>
         </section>
 
         <section id="service" class="services">
-
             <div class="container">
-
                 <div class="row justify-content-center">
                     <div class="col-md-12">
                         <?php if(Session::has('success')): ?>
@@ -74,13 +69,13 @@
                                                     <?php $__currentLoopData = $buku_tamu; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                         <tr>
                                                             <td><?php echo e($i++); ?></td>
-                                                            <td><?php echo e($b->nama); ?></td>
-                                                            <td><?php echo e($b->alamat); ?></td>
+                                                            <td><?php echo e($b->User->nama); ?></td>
+                                                            <td><?php echo e($b->User->alamat); ?></td>
                                                             <td><?php echo e($b->tanggal); ?></td>
                                                             <td>
                                                                 <?php if(auth()->check()): ?>
                                                                     <?php if(auth()->user()->admin): ?>
-                                                                        <a class="btn btn-warning" href="<?php echo e(route('tamu.edit', $b->id)); ?>">Edit</a>
+                                                                        <a class="btn btn-warning" href="<?php echo e(route('tamu.edit', $b)); ?>">Edit</a>
                                                                     <?php endif; ?>
                                                                 <?php endif; ?>
                                                             </td>
@@ -97,19 +92,15 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="card-footer border-0">
                                 <?php echo e($buku_tamu->links('pagination::bootstrap-4')); ?>
 
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </section>
-
     </main>
 
 <?php $__env->stopSection(); ?>

@@ -75,7 +75,7 @@
                                                     <?php $__currentLoopData = $donasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                         <tr>
                                                             <td><?php echo e($i++); ?></td>
-                                                            <td><?php echo e($d->nama_donatur); ?></td>
+                                                            <td><?php echo e($d->User->nama); ?></td>
                                                             <td><?php echo e($d->nama_penerima); ?></td>
                                                             <td><?php echo e($d->tanggal); ?></td>
                                                             <td><?php echo e($d->status); ?></td>
